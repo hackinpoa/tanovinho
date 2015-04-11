@@ -2,7 +2,7 @@ p#notice = notice
 
 p
   strong Name:
-  = @product.name
+  = "#{@product.name}. #{t("condition.condition#{@product.condition}")}"
 p
   strong Slug:
   = @product.slug

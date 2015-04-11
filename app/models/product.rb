@@ -1,10 +1,14 @@
 class Product < ActiveRecord::Base
   include Priceable
- 
+
   attachment :product_image
   acts_as_taggable
   before_validation :create_slug, if: :name_changed?
   belongs_to :user
+
+  def self.condition_options
+    (1..5)
+  end
 
   def price=(val)
     super(price_to_number val)
