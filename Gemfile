@@ -54,8 +54,11 @@ gem "aws-sdk", '< 2'
 gem 'rmagick'
 
 # useful
-  gem 'awesome_print'
-  gem 'irbtools', require: 'irbtools/binding'
+gem 'awesome_print'
+gem 'irbtools', require: 'irbtools/binding'
+
+# PagSeguro
+gem "pagseguro-oficial", "~> 2.1.1"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
