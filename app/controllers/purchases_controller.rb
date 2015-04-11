@@ -23,15 +23,18 @@ class PurchasesController < ApplicationController
   # POST /purchases.json
   def create
     @purchase = Purchase.new(product: @product, user: current_user)
+    
+    puts "product ---->", @product.id
 
-    respond_to do |format|
-      if @purchase.save
-        format.html { redirect_to @purchase, notice: 'Purchase was successfully created.' }
-        format.json { render :show, status: :created, location: @purchase }
-      else
-        format.html { render :new }
-        format.json { render json: @purchase.errors, status: :unprocessable_entity }
+    if @purchase.save
+      response = PagSeguroService.create_payment_request(@purchase, purchases_url, current_user)
+      if response.errors.empty? 
+        redirect_to response.url 
+      else 
+        render :new, notice: response.errors.join("\n")
       end
+    else 
+      render :new
     end
   end
 
