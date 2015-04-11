@@ -52,6 +52,10 @@ gem 'refile', require: ["refile/rails", "refile/image_processing"]
 gem "aws-sdk", '< 2'
 gem 'rmagick'
 
+# useful
+  gem 'awesome_print'
+  gem 'irbtools', require: 'irbtools/binding'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
@@ -77,9 +81,6 @@ group :development, :test do
 
   gem 'i18n-debug'
 
-  # usefull
-  gem 'awesome_print'
-  gem 'irbtools', require: 'irbtools/binding'
 end
 
 gem 'rails_12factor', group: :production
