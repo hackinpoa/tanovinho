@@ -1,5 +1,8 @@
 class Category < ActiveRecord::Base
+  extend ActsAsTree::TreeView
+  
   before_validation :create_slug, if: :name_changed?
+  acts_as_tree order: 'name'
 
   private
 
