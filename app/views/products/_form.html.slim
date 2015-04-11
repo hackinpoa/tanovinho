@@ -7,6 +7,7 @@
     = f.attachment_field :product_image
     = f.input :price, as: :string, autofocus: true, input_html: { class: 'format-price' }
     = f.input :tag_list
+    = f.input :condition, collection: Product.condition_options, label_method: -> (number) { t("condition.condition#{number}") }
 
   .form-actions
     = f.button :submit

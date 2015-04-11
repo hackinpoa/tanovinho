@@ -12,3 +12,9 @@ pt-BR:
         name: 'Nome'
         email: 'E-mail'
         password: 'Senha'
+      product:
+        name: 'Nome'
+        description: 'Descrição'
+        price: 'Preço'
+        tag_list: 'Tags'
+        condition: 'Quão novo está o produto?'
