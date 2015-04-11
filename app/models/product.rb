@@ -1,6 +1,6 @@
 class Product < ActiveRecord::Base
   include Priceable
- 
+
   attachment :product_image
   acts_as_taggable
   before_validation :create_slug, if: :name_changed?
