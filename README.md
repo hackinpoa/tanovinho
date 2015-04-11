@@ -7,7 +7,7 @@ E-commerce para compra e venda de produtos novinhos.
 
 [tanovinho.herokuapp.com](https://tanovinho.herokuapp.com/).
 
-Projeto desevolvido durante o [HackInPoa](http://hackinpoa.globo.com/).
+Projeto desenvolvido durante o [HackInPoa](http://hackinpoa.globo.com/).
 
 ## Configuração do ambiente
 **TODO**
