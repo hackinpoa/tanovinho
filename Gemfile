@@ -9,6 +9,9 @@ gem 'pg'
 # Active record parent-children relationship
 gem 'acts_as_tree'
 
+# Active record tag behaviour
+gem 'acts-as-taggable-on', '~> 3.4'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 
