@@ -2,7 +2,6 @@ h1 Editing product
 
 == render 'form'
 
-= link_to 'Show', @product
+= link_to 'Show', product_path(id: @product.slug)
 '|
 = link_to 'Back', products_path
-

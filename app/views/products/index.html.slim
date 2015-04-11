@@ -18,7 +18,7 @@ table
         td = product.slug
         td = product.description
         td = number_to_currency product.price
-        td = link_to 'Show', product
+        td = link_to 'Show', product_path(id: product.slug)
         td = link_to 'Edit', edit_product_path(product)
         td = link_to 'Destroy', product, data: {:confirm => 'Are you sure?'}, :method => :delete
 
