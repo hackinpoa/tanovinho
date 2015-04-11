@@ -15,6 +15,16 @@ Projeto desevolvido durante o [HackInPoa](http://hackinpoa.globo.com/).
 - Instalar ruby 2.2
 - brew install imagemagick 
 
+No heroku:
+  ```
+  heroku config:set AWS_KEY_ID=ChaVeDaAmazON 
+  heroku config:set AWS_ACCESS_KEY=AcCesKeyDaAmazon
+  ```
+No ambiente de desenvolvimento:
+  ```
+  export AWS_KEY_ID=ChaVeDaAmazON
+  export AWS_ACCESS_KEY=AcCesKeyDaAmazon
+  ```
 
 
 ## Equipe:
