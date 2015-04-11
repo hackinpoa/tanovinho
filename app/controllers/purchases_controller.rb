@@ -1,4 +1,5 @@
 class PurchasesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_product, only: [:new, :create]
   before_action :set_purchase, only: [:show, :update, :destroy]
 
@@ -23,17 +24,15 @@ class PurchasesController < ApplicationController
   # POST /purchases.json
   def create
     @purchase = Purchase.new(product: @product, user: current_user)
-    
-    puts "product ---->", @product.id
 
     if @purchase.save
       response = PagSeguroService.create_payment_request(@purchase, purchases_url, current_user)
-      if response.errors.empty? 
-        redirect_to response.url 
-      else 
+      if response.errors.empty?
+        redirect_to response.url
+      else
         render :new, notice: response.errors.join("\n")
       end
-    else 
+    else
       render :new
     end
   end
