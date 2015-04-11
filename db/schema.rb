@@ -28,9 +28,10 @@ ActiveRecord::Schema.define(version: 20150411172359) do
     t.string   "name"
     t.string   "slug"
     t.text     "description"
-    t.decimal  "price",       precision: 8, scale: 2
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
+    t.decimal  "price",            precision: 8, scale: 2
+    t.datetime "created_at",                               null: false
+    t.datetime "updated_at",                               null: false
+    t.string   "product_image_id"
     t.integer  "user_id"
   end
 

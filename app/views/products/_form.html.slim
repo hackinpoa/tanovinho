@@ -4,6 +4,7 @@
   .form-inputs
     = f.input :name
     = f.input :description
+    = f.attachment_field :product_image
     = f.input :price, as: :string, autofocus: true, input_html: { class: 'format-price' }
     = f.input :tag_list
 

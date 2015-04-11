@@ -10,6 +10,7 @@ table
       th
       th
       th
+      th
 
   tbody
     - @products.each do |product|
@@ -21,6 +22,7 @@ table
         td = link_to 'Show', product
         td = link_to 'Edit', edit_product_path(product)
         td = link_to 'Destroy', product, data: {:confirm => 'Are you sure?'}, :method => :delete
+        td = image_tag attachment_url(product, :product_image, :fill, 300, 300, format: "jpg")
 
 br
 
