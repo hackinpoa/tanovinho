@@ -15,6 +15,9 @@ p
 p
   strong Tags:
   = @product.tags.map(&:name).join(', ')
+p
+  | vendido por:
+  strong = @product.user.email
 
 = link_to 'Edit', edit_product_path(@product)
 '|

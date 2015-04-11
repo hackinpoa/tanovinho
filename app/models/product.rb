@@ -1,6 +1,7 @@
 class Product < ActiveRecord::Base
   acts_as_taggable
   before_validation :create_slug, if: :name_changed?
+  belongs_to :user
 
   private
 
