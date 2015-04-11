@@ -5,6 +5,10 @@ class Product < ActiveRecord::Base
   before_validation :create_slug, if: :name_changed?
   belongs_to :user
 
+  def price=(val)
+    super(price_to_number val)
+  end
+
   private
 
   def create_slug
