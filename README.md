@@ -9,6 +9,14 @@ E-commerce para compra e venda de produtos novinhos.
 
 Projeto desevolvido durante o [HackInPoa](http://hackinpoa.globo.com/).
 
+## Configuração do ambiente
+** TODO **
+- Instalar o postgresql
+- Instalar ruby 2.2
+- brew install imagemagick 
+
+
+
 ## Equipe:
 
 * [Daniel Zimpel Wayhs](https://github.com/dwayhs)
