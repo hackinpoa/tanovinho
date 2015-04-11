@@ -1,0 +1,15 @@
+h1 Listing purchases
+
+table
+  thead
+    tr
+      th Product
+      th Value
+
+  tbody
+    - @purchases.each do |purchase|
+      tr
+        td
+          = link_to purchase do
+            = purchase.product.name
+        td = purchase.value

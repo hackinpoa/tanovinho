@@ -1,0 +1,3 @@
+= simple_form_for(@purchase, url: product_purchases_path(@product.slug)) do |f|
+  = f.error_notification
+  = f.button :submit, "Comprar"

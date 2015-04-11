@@ -1,0 +1,10 @@
+p#notice = notice
+
+p
+  strong User:
+  = @purchase.user.email
+p
+  strong Value:
+  = @purchase.value
+
+= link_to 'Back', purchases_path
