@@ -1,4 +1,3 @@
-# Tá Novinho
 
 ![Logo Tá Novinho](https://cloud.githubusercontent.com/assets/1806506/7101632/9c119572-e038-11e4-8cc3-1b0ceb959e5e.png "Logo Tá Novinho")
 
