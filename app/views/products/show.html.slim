@@ -12,6 +12,9 @@ p
 p
   strong Price:
   = @product.price
+p
+  strong Tags:
+  = @product.tags.map(&:name).join(', ')
 
 = link_to 'Edit', edit_product_path(@product)
 '|
