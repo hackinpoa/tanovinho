@@ -206,6 +206,7 @@ GEM
       sinatra (~> 1.4.5)
     responders (2.1.0)
       railties (>= 4.2.0, < 5)
+    rmagick (2.14.0)
     ruby_engine (1.0.1)
     ruby_info (1.0.1)
     ruby_version (1.0.1)
@@ -295,6 +296,7 @@ DEPENDENCIES
   rails (= 4.2.0)
   rails_12factor
   refile
+  rmagick
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   simple_form
