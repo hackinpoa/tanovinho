@@ -1,0 +1,55 @@
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <link href="http://fonts.googleapis.com/css?family=PT+Mono" rel="stylesheet" type="text/css"></link>
+    <link href="http://fonts.googleapis.com/css?family=Allerta" rel="stylesheet" type="text/css"></link>
+    <link href="<%= asset_path('favicon.png') %>" rel="icon" type="image/png"></link>
+    <title>#TáNovinho! | Novinho e Bem Baratinho</title>
+    <%= stylesheet_link_tag 'application' %>
+    <%= javascript_include_tag 'application' %>
+    <%= javascript_include_tag 'vendor/modernizr' %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <% if user_signed_in? %>
+      <nav class="top-bar" role="navigation">
+        <ul class="title-area">
+          <li class="name">
+            <h1>
+              <%= link_to 'Ta Novinho', root_path %>
+            </h1>
+          </li>
+        </ul>
+        <section class="top-bar-section">
+          <ul class="right">
+            <li>
+              <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+            </li>
+          </ul>
+          <!--/ ul.left
+          -->
+          <!--/   li
+          -->
+          <!--/     = link_to 'xxx', xxx_path
+          -->
+        </section>
+      </nav>
+    <% end %>
+    <% if alert.present? %>
+      <div class="alert-box alert">
+        <%= alert %>
+        <a class="close close" href="#">&times</a>
+      </div>
+    <% end %>
+    <% if notice.present? %>
+      <div class="alert-box info">
+        <%= notice %>
+        <a class="close close" href="#">&times;</a>
+      </div>
+    <% end %>
+    <div class="container">
+      <%= yield %>
+    </div>
+  </body>
+</html>

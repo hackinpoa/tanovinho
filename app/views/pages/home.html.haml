@@ -1,0 +1,128 @@
+%header.slideshow
+  .row
+    .large-3.columns.logo
+      %img{:src => asset_path('ta_novinho_white_150.png')}
+    .large-9.columns.login
+      .right
+        %a Entrar
+%section.app-content.row
+  %section.large-3.columns.left-side
+    .box
+      .box-header
+        Quão novinho você quer?
+      .box-content
+        %ul.side-nav.filters-nav
+          %li
+            %a
+              %input{type: "checkbox"}
+              %span.hashtag.tanto-faz #
+              %span.tag Tanto Faz
+          %li
+            %a
+              %input{type: "checkbox"}
+              %span.hashtag.da-caixa #
+              %span.tag Nem saiu da caixa
+          %li
+            %a
+              %input{type: "checkbox"}
+              %span.hashtag.um-pouquinho #
+              %span.tag Abri e usei um pouquinho
+          %li
+            %a
+              %input{type: "checkbox"}
+              %span.hashtag.usadinho #
+              %span.tag Usadinho, mas parece novo
+          %li
+            %a
+              %input{type: "checkbox"}
+              %span.hashtag.nem-tao-novo #
+              %span.tag Nem tão novo assim...
+      .box-footer
+    .box
+      .box-header
+        Que tipo de novinho?
+      .box-content
+        %ul.side-nav.filters-nav
+          %li
+            %a
+              %input{type: "checkbox"}
+              %span.tag Todos
+          %li
+            %a
+              %input{type: "checkbox"}
+              %span.tag Vestuário
+          %li
+            %a
+              %input{type: "checkbox"}
+              %span.tag Calçados
+          %li
+            %a
+              %input{type: "checkbox"}
+              %span.tag Smartphones
+          %li
+            %a
+              %input{type: "checkbox"}
+              %span.tag Jóias
+    .box
+      .box-header
+        Quão Baratinho?
+      .box-content
+        
+      .box-footer
+  %section.large-9.columns.right-side
+    .row
+      .product-simple.large-6.columns.left
+        .product-image{ style: "background-image: url(#{asset_path('sample_001.jpg')})"}
+          .product-image-tag.usadinho.label # Usadinho, mas parece novo 
+
+        .product-info
+          .product-title
+            %h6 Almofada Delícia
+        .product-footer
+
+      .product-simple.large-6.columns.left
+        .product-image{ style: "background-image: url(#{asset_path('sample_002.jpg')})"}
+          .product-image-tag.da-caixa.label # Nem saiu da caixa 
+        .product-info
+          .product-title
+            %h6 Almofada Delícia
+        .product-footer
+
+      .product-simple.large-6.columns.left
+        .product-image{ style: "background-image: url(#{asset_path('teste.jpg')})"}
+          .product-image-tag.um-pouquinho.label # Abri e usei um pouquinho
+        .product-info
+          .product-title
+            %h6 Almofada Delícia
+        .product-footer
+:javascript
+  $(document).ready(function(){
+    
+    // $('#container').isotope({
+    //   itemSelector: '.product-simple'
+    // });
+
+  });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

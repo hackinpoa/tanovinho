@@ -1,3 +1,100 @@
 // Place all the styles related to the pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+* {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+header.slideshow{
+	height: 650px;
+	background: url(asset-path('slideshow.jpg'));
+	background-size: cover;
+	background-position: center;
+		
+}
+header.slideshow .login{
+  	padding: 50px 0;
+ }
+
+header.slideshow .login a{
+	font-family: "Allerta";
+	color: white;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+  	font-size: .8em;
+  	&:hover{
+  		text-decoration: underline;
+  	}
+}
+
+header.slideshow .logo{
+ 	padding: 40px 0;
+}
+
+/* Filters nav */
+.filters-nav li a{
+	&:hover{
+		.tag, .categoria{
+			text-decoration:underline;
+		}
+	}
+}
+.filters-nav a{cursor: default;}
+.filters-nav li .hashtag.nem-tao-novo{ color: $pinktanovinho; }
+.filters-nav li .hashtag.um-pouquinho{ color: $bluetanovinho; }
+.filters-nav li .hashtag.usadinho{ color: $orangetanovinho; }
+.filters-nav li .hashtag.da-caixa{ color: $greentanovinho; }
+.filters-nav li .hashtag, .filters-nav li .tag, .filters-nav li .categoria{ color: $steel;}
+
+/* Product Simple */
+.product-simple{
+	// margin-bottom: 20px;
+}
+.product-simple .product-info{ padding: 10px 0; background-color: $white}
+.product-simple .product-info h6{ 
+	margin-bottom: 0; 
+	text-align: center;
+	letter-spacing: -1px;
+	text-transform: uppercase;
+}
+.product-simple .product-novinho{ font-size: rem-calc(11); }
+.product-simple .product-description{ 
+	font-size: rem-calc(12); 
+	color: $steel;
+	padding: 20px 0;
+	border-bottom: 1px dashed $iron;
+}
+.product-simple .label.nem-tao-novo{ background-color: $pinktanovinho; }
+.product-simple .label.um-pouquinho{ background-color: $bluetanovinho; }
+.product-simple .label.usadinho{ background-color: $orangetanovinho; }
+.product-simple .label.da-caixa{ background-color: $greentanovinho; }
+
+.product-simple .product-novinho.nem-tao-novo{ color: $pinktanovinho; }
+.product-simple .product-novinho.um-pouquinho{ color: $bluetanovinho; }
+.product-simple .product-novinho.usadinho{ color: $orangetanovinho; }
+.product-simple .product-novinho.da-caixa{ color: $greentanovinho; }
+.product-simple .product-image{
+    height: 400px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    position: relative;
+}
+.product-simple .product-image .product-image-tag{
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	color: white;
+}
+
+.app-content{
+	padding: 50px 0;
+}
+
+.box .box-header{
+	border-bottom: 1px dashed $iron;
+	padding: 10px 0;
+}

@@ -40,34 +40,37 @@ gem 'simple_form'
 # pagination
 gem 'kaminari'
 
+gem 'haml-rails'
+
+gem 'thin'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
+  # gem 'byebug'
 
-  # Access an IRB console on exception pages or by using <%= console %> in views
-  gem 'web-console', '~> 2.0'
+  # # Access an IRB console on exception pages or by using <%= console %> in views
+  # gem 'web-console', '~> 2.0'
 
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
+  # # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+  # gem 'spring'
 
-  gem 'pry'
-  gem 'pry-nav'
-  gem 'pry-stack_explorer'
+  # gem 'pry'
+  # gem 'pry-nav'
+  # gem 'pry-stack_explorer'
 
-  # for rails panel
-  gem 'meta_request'
+  # # for rails panel
+  # gem 'meta_request'
 
-  # silence assets from rails logs
-  gem 'quiet_assets'
+  # # silence assets from rails logs
+  # gem 'quiet_assets'
 
-  # Generates fake test data
-  gem 'faker'
+  # # Generates fake test data
+  # gem 'faker'
 
-  gem 'i18n-debug'
+  # gem 'i18n-debug'
 
   # usefull
-  gem 'awesome_print'
-  gem 'irbtools', require: 'irbtools/binding'
+  # gem 'awesome_print'
+  # gem 'irbtools', require: 'irbtools/binding'
 end
 
 gem 'rails_12factor', group: :production
