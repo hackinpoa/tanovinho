@@ -13,6 +13,16 @@
 //= require jquery
 //= require jquery_ujs
 //= require foundation
+//= require jquery.price_format.2.0.min
 //= require_tree .
 
-$(function(){ $(document).foundation(); });
+$(function(){
+  $(document).foundation();
+
+  // Price format
+  $('.format-price').priceFormat({
+    prefix: 'R$ ',
+    centsSeparator: ',',
+    thousandsSeparator: '.'
+  });
+});

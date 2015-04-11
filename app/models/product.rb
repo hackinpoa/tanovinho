@@ -1,6 +1,11 @@
 class Product < ActiveRecord::Base
+  include Priceable
   acts_as_taggable
   before_validation :create_slug, if: :name_changed?
+
+  def price=(val)
+    super(price_to_number val)
+  end
 
   private
 
