@@ -4,7 +4,7 @@
   .form-inputs
     = f.input :name
     = f.input :description
-    = f.input :price
+    = f.input :price, as: :string, autofocus: true, input_html: { class: 'format-price' }
     = f.input :tag_list
 
   .form-actions
