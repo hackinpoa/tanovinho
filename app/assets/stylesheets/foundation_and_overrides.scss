@@ -79,9 +79,9 @@ $include-html-global-classes: $include-html-classes;
 // $include-html-grid-classes: $include-html-classes;
 // $include-xl-html-grid-classes: false;
 
-$row-width: rem-calc(1200);
+$row-width: rem-calc(1280);
 // $total-columns: 12;
-// $column-gutter: rem-calc(30);
+$column-gutter: rem-calc(20);
 
 // $last-child-float: $opposite-direction;
 
@@ -116,10 +116,15 @@ $tuatara     : #444444;
 $oil         : #333333;
 $jet         : #222222;
 $black       : #000000;
-$bluetanovinho: #3762ef;
+// $bluetanovinho: #3762ef;
+// $pinktanovinho: #ef374e;
+// $orangetanovinho: rgba(203, 154, 48, 1);
+// $greentanovinho: rgba(46, 185, 53, 1);
+$bluetanovinho: #008CBA;
 $pinktanovinho: #ef374e;
-$orangetanovinho: rgba(203, 154, 48, 1);
-$greentanovinho: rgba(46, 185, 53, 1);
+$orangetanovinho: #f08a24;
+$greentanovinho: #43AC6A;
+$redtanovinho: #f04124;
 
 // We use these as default colors throughout
 // $primary-color: #008CBA;
@@ -803,7 +808,7 @@ $greentanovinho: rgba(46, 185, 53, 1);
 // $label-radius: $global-radius;
 
 // We use these to style the label text
-// $label-font-sizing: rem-calc(11);
+$label-font-sizing: rem-calc(13);
 // $label-font-weight: $font-weight-normal;
 // $label-font-color: $oil;
 // $label-font-color-alt: $white;
@@ -1094,13 +1099,13 @@ $greentanovinho: rgba(46, 185, 53, 1);
 // $range-slider-handle-width: rem-calc(32);
 // $range-slider-handle-height: rem-calc(22);
 // $range-slider-handle-position-top: rem-calc(-5);
-// $range-slider-handle-bg-color: $primary-color;
+$range-slider-handle-bg-color: $orangetanovinho;
 // $range-slider-handle-border-width: 1px;
 // $range-slider-handle-border-style: solid;
 // $range-slider-handle-border-color: none;
 // $range-slider-handle-radius: $global-radius;
 // $range-slider-handle-round: $global-rounded;
-// $range-slider-handle-bg-hover-color: scale-color($primary-color, $lightness: -12%);
+$range-slider-handle-bg-hover-color: scale-color($orangetanovinho, $lightness: -12%);
 // $range-slider-handle-cursor: pointer;
 
 // $range-slider-disabled-opacity: 0.7;

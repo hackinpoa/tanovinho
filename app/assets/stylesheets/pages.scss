@@ -13,7 +13,7 @@ header.slideshow{
 	background: url(asset-path('slideshow.jpg'));
 	background-size: cover;
 	background-position: center;
-		
+	background-position: fixed;	
 }
 header.slideshow .login{
   	padding: 50px 0;
@@ -29,9 +29,11 @@ header.slideshow .login a{
   		text-decoration: underline;
   	}
 }
-
 header.slideshow .logo{
  	padding: 40px 0;
+}
+header.slideshow p{
+	color: $white;
 }
 
 /* Filters nav */
@@ -48,15 +50,15 @@ header.slideshow .logo{
 .filters-nav li .hashtag.usadinho{ color: $orangetanovinho; }
 .filters-nav li .hashtag.da-caixa{ color: $greentanovinho; }
 .filters-nav li .hashtag, .filters-nav li .tag, .filters-nav li .categoria{ color: $steel;}
+.filters-nav li { margin: 0px; }
 
 /* Product Simple */
 .product-simple{
-	// margin-bottom: 20px;
+	margin-bottom: 10px;
 }
-.product-simple .product-info{ padding: 10px 0; background-color: $white}
+.product-simple .product-info{ padding: 10px 10px; background-color: $white; border: 1px dashed $iron; border-top: 0px}
 .product-simple .product-info h6{ 
 	margin-bottom: 0; 
-	text-align: center;
 	letter-spacing: -1px;
 	text-transform: uppercase;
 }
@@ -64,15 +66,16 @@ header.slideshow .logo{
 .product-simple .product-description{ 
 	font-size: rem-calc(12); 
 	color: $steel;
-	padding: 20px 0;
+	padding: 20px 0 0 0;
 	border-bottom: 1px dashed $iron;
 }
-.product-simple .label.nem-tao-novo{ background-color: $pinktanovinho; }
-.product-simple .label.um-pouquinho{ background-color: $bluetanovinho; }
-.product-simple .label.usadinho{ background-color: $orangetanovinho; }
-.product-simple .label.da-caixa{ background-color: $greentanovinho; }
+.product-simple .label{border-right: 1px dashed $iron}
+.product-simple .label.nem-tao-novo{ padding: 6px; color: $redtanovinho; background-color:$white}
+.product-simple .label.um-pouquinho{ padding: 6px; color: $bluetanovinho; background-color:$white}
+.product-simple .label.usadinho{ padding: 6px; color: $orangetanovinho; background-color:$white}
+.product-simple .label.da-caixa{ padding: 6px; color: $greentanovinho; background-color:$white}
 
-.product-simple .product-novinho.nem-tao-novo{ color: $pinktanovinho; }
+.product-simple .product-novinho.nem-tao-novo{ color: $redtanovinho; }
 .product-simple .product-novinho.um-pouquinho{ color: $bluetanovinho; }
 .product-simple .product-novinho.usadinho{ color: $orangetanovinho; }
 .product-simple .product-novinho.da-caixa{ color: $greentanovinho; }
@@ -83,11 +86,39 @@ header.slideshow .logo{
     background-position: 50% 50%;
     position: relative;
 }
+.product-simple .preco{
+	font-weight: bold;
+	background-color: $pinktanovinho;
+	display: inline-block;
+	color: white;
+	padding: 12px;
+}
+.product-simple .economia{
+	background-color: $oil;
+	color: white;
+	font-weight: bold;
+	padding: 12px;
+}
+.product-simple .preco .preco-original{
+	font-size: rem-calc(11);
+	font-weight: normal;
+}
 .product-simple .product-image .product-image-tag{
 	position: absolute;
 	bottom: 0;
 	right: 0;
 	color: white;
+}
+.product-simple .product-image .product-image-price{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	color: white;
+}
+.product-simple .product-image .product-image-economia{
+	position: absolute;
+	top: 0;
+	right: 0;
 }
 
 .app-content{

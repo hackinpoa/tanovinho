@@ -1,12 +1,16 @@
 %header.slideshow
   .row
-    .large-3.columns.logo
-      %img{:src => asset_path('ta_novinho_white_150.png')}
-    .large-9.columns.login
+    .large-12.columns.login
       .right
         %a Entrar
+  .row
+    .large-6.large-centered.columns
+      .text-center
+        %img{:src => asset_path('tanovinho_800_white.png'), :style => "display: inline"}
+      %p É um site para passar adiante aquilo que você acabou de comprar e, na hora de usar, não foi aquela coooisa. Fácil de entender, né? Agora é só aproveitar essas barbadas e nunca mais deixar algo novinho encalhado!
+      
 %section.app-content.row
-  %section.large-3.columns.left-side
+  %section.large-3.columns.left-side#sticky-nav
     .box
       .box-header
         Quão novinho você quer?
@@ -67,41 +71,139 @@
       .box-header
         Quão Baratinho?
       .box-content
-        
+        .range-slider{"data-options" => "display_selector: #sliderOutput3; start: 1; end: 5000;", "data-slider" => ""}
+          %span.range-slider-handle{:role => "slider", :tabindex => "0"}
+          %span.range-slider-active-segment
+        .range-result
+          %span Até R$
+          %span#sliderOutput3
+          %span ,00
       .box-footer
   %section.large-9.columns.right-side
     .row
       .product-simple.large-6.columns.left
         .product-image{ style: "background-image: url(#{asset_path('sample_001.jpg')})"}
-          .product-image-tag.usadinho.label # Usadinho, mas parece novo 
-
+          / .product-image-price.usadinho.label # Usadinho, mas parece novo 
+          .product-image-price
+            .preco
+              Você paga:
+              %span.moeda R$
+              %span.valor 85,00
+              .preco-original
+                Eu paguei: 
+                %span R$ 129,90
+          .product-image-economia
+            .economia
+              33% OFF
+          .product-image-tag
+            .label.da-caixa # Nem saiu da caixa
         .product-info
-          .product-title
-            %h6 Almofada Delícia
-        .product-footer
-
+          Almofada que comprei na empolgação. Cheguei em casa e vi que não combinava em nada com o meu sofá.
+      .product-simple.large-6.columns.left
+        .product-image{ style: "background-image: url(#{asset_path('sample_003.png')})"}
+          / .product-image-price.usadinho.label # Usadinho, mas parece novo 
+          .product-image-price
+            .preco
+              Você paga:
+              %span.moeda R$
+              %span.valor 90,00
+              .preco-original
+                Eu paguei: 
+                %span R$ 179,90
+          .product-image-economia
+            .economia
+              41% OFF
+          .product-image-tag
+            .label.um-pouquinho # Abri e usei um pouquinho
+        .product-info
+          Botas que eu comprei para minha viagem de 1 mês ao deserto do Atacama. Nunca mais volto.
+    .row
+      .product-simple.large-6.columns.left
+        .product-image{ style: "background-image: url(#{asset_path('sample_004.png')})"}
+          / .product-image-price.usadinho.label # Usadinho, mas parece novo 
+          .product-image-price
+            .preco
+              Você paga:
+              %span.moeda R$
+              %span.valor 250,00
+              .preco-original
+                Eu paguei: 
+                %span R$ 500,00
+          .product-image-economia
+            .economia
+              50% OFF
+          .product-image-tag
+            .label.usadinho # Usadinho, mas parece novo
+        .product-info
+          Noiva é uma vez na vida. Ou seja, nunca mais vou usar esse vestido.
+      .product-simple.large-6.columns.left
+        .product-image{ style: "background-image: url(#{asset_path('sample_005.jpg')})"}
+          / .product-image-price.usadinho.label # Usadinho, mas parece novo 
+          .product-image-price
+            .preco
+              Você paga:
+              %span.moeda R$
+              %span.valor 1.000,00
+              .preco-original
+                Eu paguei: 
+                %span R$ 1.500,00
+          .product-image-economia
+            .economia
+              33% OFF
+          .product-image-tag
+            .label.usadinho # Usadinho, mas parece novo
+        .product-info
+          Comprei, mas não jogo. Só sei jogar LOL.
+    .row
+      .product-simple.large-6.columns.left
+        .product-image{ style: "background-image: url(#{asset_path('sample_006.jpg')})"}
+          / .product-image-price.usadinho.label # Usadinho, mas parece novo 
+          .product-image-price
+            .preco
+              Você paga:
+              %span.moeda R$
+              %span.valor 20,00
+              .preco-original
+                Eu paguei: 
+                %span R$ 69,90
+          .product-image-economia
+            .economia
+              60% OFF
+          .product-image-tag
+            .label.da-caixa # Nem saiu da caixa
+        .product-info
+          Essa camiseta tava linda no modelo do site. Em mim, ficou horrível.
       .product-simple.large-6.columns.left
         .product-image{ style: "background-image: url(#{asset_path('sample_002.jpg')})"}
-          .product-image-tag.da-caixa.label # Nem saiu da caixa 
+          / .product-image-price.usadinho.label # Usadinho, mas parece novo 
+          .product-image-price
+            .preco
+              Você paga:
+              %span.moeda R$
+              %span.valor 50,00
+              .preco-original
+                Eu paguei: 
+                %span R$ 80,00
+          .product-image-economia
+            .economia
+              30% OFF
+          .product-image-tag
+            .label.nem-tao-novo # Nem tão novo assim
         .product-info
-          .product-title
-            %h6 Almofada Delícia
-        .product-footer
+          iPhone 3GS, parado aqui em casa. Beeeem usado, mas funciona
+%footer
 
-      .product-simple.large-6.columns.left
-        .product-image{ style: "background-image: url(#{asset_path('teste.jpg')})"}
-          .product-image-tag.um-pouquinho.label # Abri e usei um pouquinho
-        .product-info
-          .product-title
-            %h6 Almofada Delícia
-        .product-footer
+
+
+
 :javascript
   $(document).ready(function(){
     
     // $('#container').isotope({
     //   itemSelector: '.product-simple'
     // });
-
+    $('.range-slider').foundation('slider', 'set_value', 5000);
+    $(".sticky-nav").stick_in_parent()
   });
 
 
