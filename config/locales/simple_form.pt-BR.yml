@@ -4,8 +4,7 @@ pt-BR:
     no: 'Não'
     required:
       text: 'obrigatório'
-      mark:
-        html: '<abbr title="required">*</abbr>'
+      mark: '*'
     error_notification:
       default_message: "Alguns erros foram encontrados, por favor verifique:"
     labels:
