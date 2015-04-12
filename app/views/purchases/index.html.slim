@@ -5,6 +5,7 @@ table
     tr
       th Product
       th Value
+      th Status
 
   tbody
     - @purchases.each do |purchase|
@@ -13,3 +14,4 @@ table
           = link_to purchase do
             = purchase.product.name
         td = purchase.value
+        td = purchase.status
