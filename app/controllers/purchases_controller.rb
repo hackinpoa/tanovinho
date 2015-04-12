@@ -25,7 +25,11 @@ class PurchasesController < ApplicationController
 
   # POST /purchases/abandoned
   def abandoned
-    Rails.logger.info "Requisição recebida de compra abandonada"
+    Rails.logger.info %Q(
+      Requisição recebida de compra abandonada: 
+        [token: #{params[:Referencia]}] 
+        [StatusTransacao: #{params[:StatusTransacao]}]"
+      )
     purchase = Purchase.find_by token: params[:Referencia]
     purchase.status = params[:StatusTransacao]
     purchase.save
@@ -34,7 +38,11 @@ class PurchasesController < ApplicationController
 
   # POST /purchases/notification
   def notification
-    Rails.logger.info "Requisição recebida de compra concluída"
+    Rails.logger.info %Q(
+      Requisição recebida de compra concluída: 
+        [token: #{params[:Referencia]}] 
+        [StatusTransacao: #{params[:StatusTransacao]}]"
+      )
     purchase = Purchase.find_by token: params[:Referencia]
     purchase.status = params[:StatusTransacao]
     purchase.save
