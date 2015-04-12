@@ -300,9 +300,13 @@ header.navigation{
 	margin-bottom: 20px;
 }
 
+
 .box.form .form-actions{
 	padding: 20px 0 0 0;
 	border-top: 1px dashed $iron;
+	a{
+		font-size: rem-calc(12)
+	}
 }
 
 .box .box-header{
