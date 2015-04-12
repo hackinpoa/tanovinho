@@ -27,4 +27,6 @@ section.app-content.row
         - product_group.each do |product|
           = render partial: 'product_details', locals: {product: product} if product.present?
 
+    = paginate @products
+
 footer

@@ -2,7 +2,8 @@
   %nav.top-bar{"data-topbar" => "", :role => "navigation"}
     %ul.title-area
       %li.name
-        %img{src: asset_path('ta_novinho_150.png')}
+        %a{:href => root_path}
+          %img{src: asset_path('ta_novinho_150.png')}
       / Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone
       %li.toggle-topbar.menu-icon
         %a{:href => "#"}
