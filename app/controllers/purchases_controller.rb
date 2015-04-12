@@ -43,7 +43,9 @@ class PurchasesController < ApplicationController
       Requisição recebida de compra concluída: 
         [notificationCode: #{params[:notificationCode]}] 
       )
-    purchase = Purchase.find_by token: params[:Referencia]
+    
+    response = PagSeguroService.notification_info(params[:notificationCode])
+    purchase = Purchase.find_by token: response.transaction.reference
     purchase.status = params[:StatusTransacao]
     purchase.save
     Rails.logger.info "Compra efetuada: #{purchase.product.name} - #{purchase.token}"
