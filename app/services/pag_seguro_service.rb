@@ -6,7 +6,7 @@ class PagSeguroService
   def self.notification_info (code)
     Rails.logger.info "Iniciando consulta de notificaçoes de transação..."
     wsUrl = "https://ws.pagseguro.uol.com.br/v3/transactions/notifications/#{code}?token=#{@@token}&email=#{@@email}"
-    response = HTTPParty.get(wsUrl);
+    response = HTTParty.get(wsUrl);
     Rails.logger.info %Q("
         [reference: #{response.transaction.reference}]
         [status: #{response.transaction.status}]
