@@ -31,13 +31,10 @@ section.app-content.row
             .product-info
               ul.product-details
                 li 
-                  i.fi-clock Comprado em 
-                  span.date 08/05/2014
+                  i.fi-clock = @is_sales ? 'Colocado à venda em ' : 'Comprado em '
+                  span.date = localize item.created_at, format: :short
                 li 
-                  i.fi-eye Visualizado
-                  span.times  89 vezes
-                li 
-                  i.fi-price-tag R$ 80,00
+                  i.fi-price-tag = number_to_currency product.price
             - if @is_sales
               ul.product-actions 
                 li
