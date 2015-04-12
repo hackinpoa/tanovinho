@@ -163,6 +163,10 @@ header.navigation{
 	border-bottom: 1px solid $iron;
 }
 
+/* Inner Nav */
+.inner-nav li a { color: $steel !important; &:hover{text-decoration: underline;}}
+.inner-nav li.active a { color: $pinktanovinho !important; &:hover{text-decoration: underline;}}
+
 /* Filters nav */
 .filters-nav li a{
 	&:hover{
@@ -227,6 +231,8 @@ header.navigation{
 .label.inverse.da-caixa, .label.inverse.condition4{ padding: 6px; background-color: $greentanovinho; color:$white}
 
 .label.inverse.economia{ padding: 6px; background-color: $oil; color:$white}
+
+
 
 
 /* Lista das comprinhas e da vendinha */
