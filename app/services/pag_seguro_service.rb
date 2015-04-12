@@ -10,13 +10,13 @@ class PagSeguroService
 
   def self.statuses
     {
-      "1": "waiting_approval",
-      "2": "checking_credit_card",
-      "3": "paid",
-      "4": "finished",
-      "5": "dispute",
-      "6": "returned",
-      "7": "canceled"
+      "1" => "waiting_approval",
+      "2" => "checking_credit_card",
+      "3" => "paid",
+      "4" => "finished",
+      "5" => "dispute",
+      "6" => "returned",
+      "7" => "canceled"
     }
   end
 
@@ -33,7 +33,7 @@ class PagSeguroService
    
     { 
       :token => response["transaction"]["reference"],
-      :status => statuses[response["transaction"]["status"]]
+      :status => statuses[response["transaction"]["status"].to_s]
     }
   end
 
