@@ -1,4 +1,9 @@
 header.slideshow
+  #video-container
+    video.fillWidth autoplay="" loop="" muted=""
+      source src="#{asset_path('video01.mp4')}" type="video/mp4"
+      | Seu navegador não suporta videos. Já passou da hora de atualizar o seu navegador, hein? :)
+  #darken-container
   .row
     .large-12.columns.login
       ul.right
@@ -14,6 +19,9 @@ header.slideshow
       .text-center
         img src=asset_path('tanovinho_800_white.png') style="display: inline"
       p É um site para passar adiante aquilo que você acabou de comprar e, na hora de usar, não foi aquela coooisa. Fácil de entender, né? Agora é só aproveitar essas barbadas e nunca mais deixar algo novinho encalhado!
+
+
+
 
 section.app-content.row
 

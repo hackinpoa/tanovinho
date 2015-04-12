@@ -20,7 +20,51 @@ header.slideshow{
 	background-size: cover;
 	background-position: center;
 	background-position: fixed;
+	position: relative;
+	// background-color: rgba(0,0,0, .4);
 }
+
+#darken-container
+
+.hidden-widget-title{
+  display: none;
+}
+
+// .header-unit {
+//   height: 554px;
+//   border: 2px solid #000;
+//   border-right:none;
+//   border-left: none;
+//   position: relative;
+//   padding: 20px;
+// }
+#video-container {
+  position: absolute;
+}
+#video-container {
+  top:0%;
+  left:0%;
+  height:100%;
+  width:100%;
+  overflow: hidden;
+}
+#darken{
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0,0,0,.4);
+  position: absolute;
+  z-index: 1;
+}
+
+video {
+  position:absolute;
+  z-index:0;
+}
+video.fillWidth {
+  width: 100%;
+}
+
+
 header.slideshow .login{
   	padding: 50px 0;
  }
