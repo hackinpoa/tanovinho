@@ -37,29 +37,9 @@ section.app-content.row
 
   section.large-9.columns.right-side
 
-
-
-    // tem row de 2 em 2
     - @products.in_groups_of(2).each do |product_group|
       .row
         - product_group.each do |product|
           = render partial: 'product_details', locals: {product: product} if product.present?
-
-      //.product-box.large-6.columns.left
-      //  .product-image style="background-image: url(#{asset_path('sample_001.jpg')})"
-      //    / .product-image-price.usadinho.label # Usadinho, mas parece novo
-      //    .product-image-price
-      //      .preco
-      //        Você paga:
-      //        span.moeda R$
-      //        span.valor 85,00
-      //        .preco-original
-      //          | Eu paguei:
-      //          span R$ 129,90
-      //    .product-image-economia
-      //      .economia 33% OFF
-      //    .product-image-tag
-      //      .label.da-caixa # Nem saiu da caixa
-      //  .product-info Almofada que comprei na empolgação. Cheguei em casa e vi que não combinava em nada com o meu sofá.
 
 footer
