@@ -1,5 +1,12 @@
-h1 New product
-
-== render 'form'
+== render 'layouts/header'
+section.app-content.row
+  .large-6.columns.large-centered
+    .box.form
+      .box-header
+        h4 
+          i.fi.fi-plus.ta-novinho
+          =" Conte mais sobre o seu produto"
+      .box-content
+		    == render 'form'
 
 = link_to 'Back', products_path

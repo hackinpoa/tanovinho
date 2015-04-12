@@ -15,25 +15,7 @@ html lang="en"
     = csrf_meta_tags
   body
 
-
-    header.slideshow
-      .row
-        .large-12.columns.login
-          .right
-            li
-              = link_to 'Criar produto', new_product_path
-            li
-              - if user_signed_in?
-                = link_to('Sair', destroy_user_session_path, :method => :delete)
-              - else
-                = link_to('Entrar', new_user_session_path)
-      .row
-        .large-6.large-centered.columns
-          .text-center
-            img src=asset_path('tanovinho_800_white.png') style="display: inline"
-          p É um site para passar adiante aquilo que você acabou de comprar e, na hora de usar, não foi aquela coooisa. Fácil de entender, né? Agora é só aproveitar essas barbadas e nunca mais deixar algo novinho encalhado!
-
-
+    
 
     - if alert.present?
       .alert-box.alert data-alert=''

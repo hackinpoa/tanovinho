@@ -1,0 +1,317 @@
+// Place all the styles related to the pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+* {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+/* Ícone TaNovinho */
+i.ta-novinho{
+	color: $pinktanovinho;
+}
+
+/* Links */
+a.danger{
+	color: $redtanovinho;
+}
+/* Button */
+
+
+/* Header */
+header.slideshow{
+	height: 650px;
+	background: url(asset-path('slideshow.jpg'));
+	background-size: cover;
+	background-position: center;
+	background-position: fixed;	
+}
+header.slideshow .login{
+  	padding: 50px 0;
+ }
+header.slideshow .login a{
+	font-family: "Allerta";
+	color: white;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+  	font-size: .8em;
+  	&:hover{
+  		text-decoration: underline;
+  	}
+}
+header.slideshow .logo{ padding: 40px 0; }
+header.slideshow p{ color: $white;}
+header.slideshow ul{
+	padding-left: 0;
+	list-style-position: inside;
+	list-style-type: none;
+	list-style-position:inside;
+	margin:0;
+    padding:0;
+	li{
+		list-style-type: none;
+        list-style-position:inside;
+        margin:0;
+        padding:0;
+        float: left;
+        a:hover{
+        	text-decoration: underline;
+        }
+	}
+}
+
+/* Breadcrumbs */
+ul.breadcrumbs{
+	border-left: 0px;
+	border-right: 0px;
+}
+
+/* Produto */
+.product .product-divisor{
+	height: 2px;
+	width: 100%;
+	margin: 20px 0;
+	background-color: $iron;
+}
+.product .product-description{
+	font-size: rem-calc(13);
+	color: $steel
+}
+.product .product-preco{
+	padding: 20px 0;
+}
+
+.product .product-owner{
+	padding: 10px 0 20px 0;
+}
+.product .owner-details{
+	font-size: rem-calc(14);
+	color: $oil;
+	list-style-type: none;
+	padding-left: 0;
+	list-style-position: inside;
+	list-style-type: none;
+	list-style-position:inside;
+	margin:0;
+    padding:0;
+
+	li{
+		list-style-type: none;
+        list-style-position:inside;
+        margin:0;
+        padding:0;
+	}
+}
+
+
+/* Top Bar */
+header.navigation{
+	border-bottom: 1px solid $iron;
+}
+
+/* Inner nav */
+.inner-nav li a { color: $steel !important; &:hover{text-decoration: underline;}}
+.inner-nav li.active a { color: $pinktanovinho !important; &:hover{text-decoration: underline;}}
+
+/* Filters nav */
+.filters-nav li a{
+	&:hover{
+		.tag, .categoria{
+			text-decoration:underline;
+		}
+	}
+}
+.filters-nav a{cursor: default;}
+.filters-nav li .hashtag.nem-tao-novo{ color: $pinktanovinho; }
+.filters-nav li .hashtag.um-pouquinho{ color: $bluetanovinho; }
+.filters-nav li .hashtag.usadinho{ color: $orangetanovinho; }
+.filters-nav li .hashtag.da-caixa{ color: $greentanovinho; }
+.filters-nav li .hashtag, .filters-nav li .tag, .filters-nav li .categoria{ color: $steel;}
+.filters-nav li { margin: 0px; }
+
+/* Preço e Economia */
+.preco{
+	font-weight: bold;
+	background-color: $pinktanovinho;
+	display: inline-block;
+	color: white;
+	padding: 12px;
+}
+.preco.inverse{
+	font-weight: bold;
+	color: $pinktanovinho;
+	display: inline-block;
+	background-color: white;
+	padding: 12px;
+}
+.preco.negative{
+	font-weight: bold;
+	color: $oil;
+	display: inline-block;
+	background-color: white;
+	padding: 0;
+	font-size: rem-calc(20);
+}
+.economia{
+	background-color: $oil;
+	color: white;
+	font-weight: bold;
+	padding: 12px;
+}
+.preco .preco-original{
+	font-size: rem-calc(11);
+	font-weight: normal;
+}
+
+/* Labels de Tag */
+.label.nem-tao-novo{ padding: 6px; color: $redtanovinho; background-color:$white}
+.label.um-pouquinho{ padding: 6px; color: $bluetanovinho; background-color:$white}
+.label.usadinho{ padding: 6px; color: $orangetanovinho; background-color:$white}
+.label.da-caixa{ padding: 6px; color: $greentanovinho; background-color:$white}
+.label.inverse.economia{ padding: 6px; background-color: $oil; color:$white}
+.label.inverse.nem-tao-novo{ padding: 6px; background-color: $redtanovinho; color:$white}
+.label.inverse.um-pouquinho{ padding: 6px; background-color: $bluetanovinho; color:$white}
+.label.inverse.usadinho{ padding: 6px; background-color: $orangetanovinho; color:$white}
+.label.inverse.da-caixa{ padding: 6px; background-color: $greentanovinho; color:$white}
+
+
+/* Lista das comprinhas e da vendinha */
+.product-listed{
+	border-bottom: 1px dashed $iron;
+}
+.product-listed .product-info{
+	padding: 20px 0px
+}
+.product-listed .product-image{
+    height: 200px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    position: relative;
+}
+.product-listed .product-details{
+	font-size: rem-calc(12);
+	color: $oil;
+	list-style-type: none;
+	padding-left: 0;
+	list-style-position: inside;
+	list-style-type: none;
+	list-style-position:inside;
+	margin:0;
+    padding:0;
+
+	li{
+		list-style-type: none;
+        list-style-position:inside;
+        margin:0;
+        padding:0;
+	}
+}
+.product-listed .product-data{ position: relative; height: 200px; }
+.product-listed .product-actions { padding: 1px 0; position: absolute; bottom: 0; left: 0; font-size: rem-calc(12) }
+.product-listed ul.product-actions {
+	font-size: rem-calc(12);
+	color: $oil;
+	list-style-type: none;
+	padding-left: 0;
+	list-style-position: inside;
+	list-style-type: none;
+	list-style-position:inside;
+	margin:0;
+    padding:0;
+	li{
+		list-style-type: none;
+        list-style-position:inside;
+        margin:0;
+        padding:0;
+        float: left;
+        a:hover{
+        	text-decoration: underline;
+        }
+	}
+}
+
+/* Boxes da Home */
+.product-box{
+	margin-bottom: 10px;
+}
+.product-box .product-info{ padding: 10px 10px; background-color: $white; border: 1px dashed $iron; border-top: 0px}
+.product-box .product-info h6{ 
+	margin-bottom: 0; 
+	letter-spacing: -1px;
+	text-transform: uppercase;
+}
+.product-box .product-novinho{ font-size: rem-calc(11); }
+.product-box .product-description{ 
+	font-size: rem-calc(12); 
+	color: $steel;
+	padding: 20px 0 0 0;
+	border-bottom: 1px dashed $iron;
+}
+.product-box .label{border-right: 1px dashed $iron}
+.product-box .product-novinho.nem-tao-novo{ color: $redtanovinho; }
+.product-box .product-novinho.um-pouquinho{ color: $bluetanovinho; }
+.product-box .product-novinho.usadinho{ color: $orangetanovinho; }
+.product-box .product-novinho.da-caixa{ color: $greentanovinho; }
+.product-box .product-image{
+    height: 400px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    position: relative;
+}
+
+.product-box .product-image .product-image-tag{
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	color: white;
+}
+.product-box .product-image .product-image-price{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	color: white;
+}
+.product-box .product-image .product-image-economia{
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+/* Fix para a top-nav com imagem */
+@media only screen and (max-width: 40em) {
+    .title-area {
+
+    }
+    .name {
+
+    }
+    .name img {
+	    height:40px;
+	    margin-top:40px;
+	    margin-left:5px;
+    }
+}
+.name img { margin-left:20px; margin-top: 10px;}
+
+.app-content{
+	padding: 50px 0;
+}
+
+/* Boxes especificos */
+.box.form .box-header{
+	margin-bottom: 20px;
+}
+
+.box.form .form-actions{
+	padding: 20px 0 0 0;
+	border-top: 1px dashed $iron;	
+}
+
+.box .box-header{
+	border-bottom: 1px dashed $iron;
+	padding: 10px 0;
+}

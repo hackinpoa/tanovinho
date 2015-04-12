@@ -3,12 +3,16 @@
 
   .form-inputs
     = f.input :name, autofocus: true
-    = f.input :description
-    = f.attachment_field :product_image
+    = f.input :description, as: :text, input_html: { rows: '6' } 
     = f.input :price, as: :string, input_html: { class: 'format-price' }
     = f.input :price_paid, as: :string, input_html: { class: 'format-price' }
     = f.input :tag_list
     = f.input :condition, collection: Product.condition_options, label_method: -> (number) { t("condition.condition#{number}") }
+    = label_tag "Selecione a melhor foto do seu produto*"
+    = f.attachment_field :product_image
 
-  .form-actions
-    = f.button :submit
+  .form-actions.box-footer
+    = button_tag(type: 'submit', class: "button success") do 
+      i.fi.fi-check
+      =" Colocar o novinho pra vender"
+          

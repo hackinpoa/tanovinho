@@ -31,8 +31,8 @@ ActiveRecord::Schema.define(version: 20150411235518) do
     t.decimal  "price",            precision: 8, scale: 2
     t.datetime "created_at",                               null: false
     t.datetime "updated_at",                               null: false
-    t.integer  "user_id"
     t.string   "product_image_id"
+    t.integer  "user_id"
     t.integer  "condition"
     t.decimal  "price_paid",       precision: 8, scale: 2
   end

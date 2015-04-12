@@ -16,8 +16,12 @@ gem 'acts-as-taggable-on', '~> 3.4'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 
+# haml for the gerson
+gem 'haml-rails'
+
 # css framework
 gem 'foundation-rails'
+gem 'foundation-icons-sass-rails'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -40,6 +44,9 @@ gem 'devise-i18n'
 
 # slim templates
 gem 'slim-rails'
+
+# gerson server
+gem 'thin'
 
 # forms
 gem 'simple_form'
