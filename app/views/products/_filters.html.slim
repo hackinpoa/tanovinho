@@ -1,0 +1,35 @@
+= simple_form_for(:product_filter, method: :get) do |f|
+  .box
+    .box-header Quão novinho você quer?
+    .box-content
+      ul.side-nav.filters-nav.product-condition-filter
+        - Product.condition_options.each do |condition|
+          li
+            = f.input_field "condition[#{condition}]", as: :boolean, inline_label: "##{t("condition.condition#{condition}")}", label: false, label_html: {class: 'oee'}
+    .box-footer
+
+  // TODO: implement this filter
+  // .box
+  //   .box-header
+  //     Que tipo de novinho?
+  //   .box-content
+  //     ul.side-nav.filters-nav
+  //       // TODO: list categories from the database
+  //       - ['Todos', 'Vestuário', 'Calçados', 'Smartphones', 'Jóias'].each do |option|
+  //         li
+  //           a
+  //             input type="checkbox"
+  //             span.tag Todos
+
+  // TODO: implement this filter
+  // .box
+  //   .box-header Quão Baratinho?
+  //   .box-content
+  //     .range-slider data-options='display_selector: #sliderOutput3; start: 1; end: 5000;' data-slider=''
+  //       span.range-slider-handle role='slider' tabindex='0'}
+  //       span.range-slider-active-segment
+  //     .range-result
+  //       span Até R$
+  //       span#sliderOutput3
+  //       span ,00
+  //   .box-footer

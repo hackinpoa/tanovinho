@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require foundation
 //= require jquery.price_format.2.0.min
+//= require sticky.kit
 //= require_tree .
 
 $(function(){
@@ -28,5 +29,14 @@ $(function(){
 
   $('.range-slider').foundation('slider', 'set_value', 5000);
 
-  $(".sticky-nav").stick_in_parent();
+  $("#sticky-nav").stick_in_parent();
+
+  $("form.product_filter input").change(function() {
+    $('.products-container').fadeTo('slow', 0.2);
+
+    $.get('/?' + $(this).closest('form').serialize(), function(html) {
+      $('.products-container').html($(html).find('.products-container').html());
+      $('.products-container').fadeTo('slow', 1);
+    })
+  })
 });

@@ -8,13 +8,26 @@ class Product < ActiveRecord::Base
   belongs_to :user
 
   def has_correct_price?
-    if price >= price_paid 
+    if price >= price_paid
       errors.add(:price, 'O preço de venda deve ser menor que o preço que você pagou')
-    end    
+    end
   end
 
   def self.condition_options
     (1..5)
+  end
+
+  def self.filter(filter_params)
+    products = self.all
+
+
+    conditions = (filter_params['condition'] || {}).select { |k, v| v == "1" }.keys.map(&:to_i)
+    if conditions.any?
+      conditions = filter_params['condition'].select { |k, v| v == "1" }.keys.map(&:to_i)
+      products = products.where('condition in (:conditions)', {conditions: conditions})
+    end
+
+    products
   end
 
   def price=(val)

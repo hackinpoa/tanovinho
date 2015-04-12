@@ -1,41 +1,10 @@
+
 section.app-content.row
 
   section.large-3.columns.left-side#sticky-nav
-    .box
-      .box-header Quão novinho você quer?
-      .box-content
-        ul.side-nav.filters-nav
-          - ['Tanto Faz', 'Nem Saiu da caixa', 'Abri e usei um pouquinho', 'Usadinho, mas parece novo', 'Nem tão novo assim...'].each do |option|
-            li
-              a
-                input type='checkbox'
-                span.hashtag.tanto-faz #
-                span.tag = option
-      .box-footer
-    .box
-      .box-header
-        Que tipo de novinho?
-      .box-content
-        ul.side-nav.filters-nav
-          // TODO: list categories from the database
-          - ['Todos', 'Vestuário', 'Calçados', 'Smartphones', 'Jóias'].each do |option|
-            li
-              a
-                input type="checkbox"
-                span.tag Todos
-    .box
-      .box-header Quão Baratinho?
-      .box-content
-        .range-slider data-options='display_selector: #sliderOutput3; start: 1; end: 5000;' data-slider=''
-          span.range-slider-handle role='slider' tabindex='0'}
-          span.range-slider-active-segment
-        .range-result
-          span Até R$
-          span#sliderOutput3
-          span ,00
-      .box-footer
+    = render partial: 'filters'
 
-  section.large-9.columns.right-side
+  section.large-9.columns.right-side.products-container
 
     - @products.in_groups_of(2).each do |product_group|
       .row
