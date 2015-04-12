@@ -1,5 +1,5 @@
 class PurchasesController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:notification, :abandoned]
   before_action :set_product, only: [:new, :create]
   before_action :set_purchase, only: [:show, :update, :destroy]
 
@@ -20,13 +20,40 @@ class PurchasesController < ApplicationController
     @purchase = Purchase.new(product: @product)
   end
 
+  # POST /purchases/abandoned
+  def abandoned
+    Rails.logger.info "Requisição recebida de compra abandonada"
+    purchase = Purchase.find_by token: params[:Referencia]
+    purchase.status = params[:StatusTransacao]
+    purchase.save
+    Rails.logger.info "Compra abandonada: #{purchase.product.name} - #{purchase.token}"
+  end
+
+  # POST /purchases/notification
+  def notification
+    Rails.logger.info "Requisição recebida de compra concluída"
+    purchase = Purchase.find_by token: params[:Referencia]
+    purchase.status = params[:StatusTransacao]
+    purchase.save
+    Rails.logger.info "Compra efetuada: #{purchase.product.name} - #{purchase.token}"
+  end
+
   # POST /purchases
   # POST /purchases.json
   def create
     @purchase = Purchase.new(product: @product, user: current_user)
+    @purchase.token = SecureRandom.hex
+    
+    urls = {
+      :abandoned => abandoned_purchases_url,
+      :notification => notification_purchases_url,
+      :redirect => purchases_url
+    }
+
+    puts "urls", urls
 
     if @purchase.save
-      response = PagSeguroService.create_payment_request(@purchase, purchases_url, current_user)
+      response = PagSeguroService.create_payment_request(@purchase, current_user, urls)
       if response.errors.empty?
         redirect_to response.url
       else
