@@ -14,11 +14,11 @@
         %li
           %a{:href => new_product_path} Vender no #TáNovinho
         %li
-          %a{:href => purchases_path}
+          %a{:href => '/purchases?mode=purchases'}
             %i.fi-shopping-bag
             Minhas Comprinhas
         %li
-          %a{:href => purchases_path}
+          %a{:href => '/purchases?mode=sales'}
             %i.fi-pricetag-multiple
             Minha Vendinha
         - if user_signed_in?

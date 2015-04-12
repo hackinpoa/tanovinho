@@ -37,9 +37,7 @@ section.app-content.row
                   i.fi-price-tag = number_to_currency product.price
             - if @is_sales
               ul.product-actions 
+                li                  
+                  = link_to "Alterar", edit_product_path(product), { class: 'fi-pencil' }                 
                 li
-                  a
-                    i.fi-pencil Editar
-                li
-                  a.danger
-                    i.fi-x Remover
+                  = link_to "Remover", product_path(product), { method: :delete, class: 'fi-x', }
