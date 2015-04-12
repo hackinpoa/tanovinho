@@ -1,17 +1,48 @@
-h1 Listing purchases
+= render 'layouts/header'
+section.app-content.row
+  section.large-3.columns.left-side#sticky-nav
+    .box
+      .box-header
+        i.fi-torso 
+          =  current_user.email
+      .box-content
+        ul.side-nav.inner-nav
+          li class=('active' if not @is_sales)
+            a href="/purchases?mode=purchases"
+              i.fi-shopping-bag Minhas Comprinhas
+          li class=('active' if @is_sales)
+            a href="/purchases?mode=sales"
+              i.fi-pricetag-multiple Minhas Vendinhas
+          li
+            a = link_to new_product_path
+              i.fi-plus Vender no #TáNovinho
 
-table
-  thead
-    tr
-      th Product
-      th Value
-      th Status
-
-  tbody
-    - @purchases.each do |purchase|
-      tr
-        td
-          = link_to purchase do
-            = purchase.product.name
-        td = purchase.value
-        td = purchase.status
+  section.large-9.columns.right-side
+    .product-listed
+      - @items.each do |item|  
+        - product = @is_sales ? item : item.product
+        .row
+          .large-3.columns
+            .product-image style="background-image: url(#{attachment_url(product, :product_image, :fill, 1024, 768, format: 'jpg')})"
+          .large-9.columns.product-data
+            .product-name
+              h5
+                = product.name
+            .product-info
+              ul.product-details
+                li 
+                  i.fi-clock Comprado em 
+                  span.date 08/05/2014
+                li 
+                  i.fi-eye Visualizado
+                  span.times  89 vezes
+                li 
+                  i.fi-price-tag R$ 80,00
+            - if @is_sales
+              ul.product-actions 
+                li
+                  a
+                    i.fi-pencil Editar
+                li
+                  a.danger
+                    i.fi-x Remover
