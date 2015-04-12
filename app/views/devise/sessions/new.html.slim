@@ -12,8 +12,6 @@ section.app-content.row
             = f.input :email, required: false, autofocus: true
             = f.input :password, required: false
             = f.input :remember_me, as: :boolean if devise_mapping.rememberable?
-
-
           .form-actions.box-footer
             = button_tag(type: 'submit', class: "button success") do 
               i.fi.fi-check
