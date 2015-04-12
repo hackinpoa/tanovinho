@@ -1,40 +1,45 @@
-header.slideshow
-  #video-container
-    video.fillWidth autoplay="" loop="" muted=""
-      source src="#{asset_path('video01.mp4')}" type="video/mp4"
-      | Seu navegador não suporta videos. Já passou da hora de atualizar o seu navegador, hein? :)
-  #darken-container
-  .row
-    .large-12.columns.login
-      ul.right
-        li
-          = link_to 'Criar produto', new_product_path
-        li
-          - if user_signed_in?
-            = link_to('Sair', destroy_user_session_path, :method => :delete)
-          - else
-            = link_to('Entrar', new_user_session_path)
-  .row
-    .large-6.large-centered.columns
-      .text-center
-        img src=asset_path('tanovinho_800_white.png') style="display: inline"
-      p É um site para passar adiante aquilo que você acabou de comprar e, na hora de usar, não foi aquela coooisa. Fácil de entender, né? Agora é só aproveitar essas barbadas e nunca mais deixar algo novinho encalhado!
+= simple_form_for(:product_filter, method: :get) do |f|
+  header.slideshow
+    #video-container
+      video.fillWidth autoplay="" loop="" muted=""
+        source src="#{asset_path('video01.mp4')}" type="video/mp4"
+        | Seu navegador não suporta videos. Já passou da hora de atualizar o seu navegador, hein? :)
+    #darken-container
+    .row
+      .large-12.columns.login
+        ul.right
+          li
+            = link_to 'Criar produto', new_product_path
+          li
+            - if user_signed_in?
+              = link_to('Sair', destroy_user_session_path, :method => :delete)
+            - else
+              = link_to('Entrar', new_user_session_path)
+    .row
+      .large-6.large-centered.columns
+        .text-center
+          img src=asset_path('tanovinho_800_white.png') style="display: inline"
+        p É um site para passar adiante aquilo que você acabou de comprar e, na hora de usar, não foi aquela coooisa. Fácil de entender, né? Agora é só aproveitar essas barbadas e nunca mais deixar algo novinho encalhado!
+        .large-10.columns.large-offset-1.search-field
+          .row.collapse.postfix-round
+            .small-9.columns
+              = f.input_field :search, placeholder: 'Pesquise aqui...', value: params[:product_filter][:search]
 
+            .small-3.columns
+              button.button.master.postfix type='submit' Buscar
 
+  section.app-content.row
 
+    section.large-3.columns.left-side#sticky-nav
+      = render partial: 'filters', locals: {f: f}
 
-section.app-content.row
+    section.large-9.columns.right-side.products-container
 
-  section.large-3.columns.left-side#sticky-nav
-    = render partial: 'filters'
+      - @products.in_groups_of(2).each do |product_group|
+        .row
+          - product_group.each do |product|
+            = render partial: 'product_details', locals: {product: product} if product.present?
 
-  section.large-9.columns.right-side.products-container
+      = paginate @products
 
-    - @products.in_groups_of(2).each do |product_group|
-      .row
-        - product_group.each do |product|
-          = render partial: 'product_details', locals: {product: product} if product.present?
-
-    = paginate @products
-
-footer
+  footer

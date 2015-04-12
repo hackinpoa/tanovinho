@@ -20,6 +20,9 @@ class Product < ActiveRecord::Base
   def self.filter(filter_params)
     products = self.all
 
+    if filter_params[:search].present? and not filter_params[:search].blank?
+      products = products.where("lower(name) LIKE :search OR lower(description) LIKE :search", {search: "%#{filter_params[:search].downcase}%"})
+    end
 
     conditions = (filter_params['condition'] || {}).select { |k, v| v == "1" }.keys.map(&:to_i)
     if conditions.any?
