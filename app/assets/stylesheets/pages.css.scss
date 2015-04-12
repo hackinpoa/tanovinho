@@ -26,12 +26,11 @@ big.ta-novinho{
 
 /* Header */
 header.slideshow{
-  margin-bottom: 30px;
 	background-size: cover;
 	background-position: center;
-	background-position: fixed;
 	position: relative;
-	// background-color: rgba(0,0,0, .4);
+  overflow: hidden;
+	background-color: rgba(0, 0, 0, .4);
 }
 
 #darken-container
