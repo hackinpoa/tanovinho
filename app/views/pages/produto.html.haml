@@ -1,0 +1,33 @@
+%header.fixed.navigation
+  %nav.top-bar{"data-topbar" => "", :role => "navigation"}
+    %ul.title-area
+      %li.name
+        %img{src: asset_path('ta_novinho_150.png')}
+      / Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone
+      %li.toggle-topbar.menu-icon
+        %a{:href => "#"}
+          %span Menu
+    %section.top-bar-section
+      %ul.right
+        %li
+          %a{:href => "#"} Ofertas do #TáNovinho
+        %li
+          %a{:href => "#"} Vender no #TáNovinho
+        %li
+          %a{:href => "#"} Entrar
+%section.app-content.row
+  %section.breadcrumb.row
+  .large-12.columns
+    %ul.breadcrumbs
+      %li
+        %a{:href => "#"} Ver ofertas
+      %li.current
+        %a{:href => "#"} Almofada que comprei...
+  %section.large-7.columns.left-side#sticky-nav
+    %img{src: asset_path('sample_001.jpg')}
+  %section.large-5.columns.right-side
+    .product    
+      .product-title
+        %h4
+          Almofada que comprei na empolgação. Cheguei em casa e vi que não combinava em nada com o meu sofá
+      .product-divisor

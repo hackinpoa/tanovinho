@@ -8,6 +8,7 @@
             box-sizing: border-box;
 }
 
+/* Header */
 header.slideshow{
 	height: 650px;
 	background: url(asset-path('slideshow.jpg'));
@@ -18,7 +19,6 @@ header.slideshow{
 header.slideshow .login{
   	padding: 50px 0;
  }
-
 header.slideshow .login a{
 	font-family: "Allerta";
 	color: white;
@@ -29,11 +29,30 @@ header.slideshow .login a{
   		text-decoration: underline;
   	}
 }
-header.slideshow .logo{
- 	padding: 40px 0;
+header.slideshow .logo{ padding: 40px 0; }
+header.slideshow p{ color: $white;}
+
+/* Breadcrumbs */
+section.breadcrumb{
+
 }
-header.slideshow p{
-	color: $white;
+ul.breadcrumbs{
+	border-left: 0px;
+	border-right: 0px;
+}
+
+/* Produto */
+.product-divisor{
+	height: 2px;
+	width: 100%;
+	margin: 20px 0;
+	background-color: lighten($pinktanovinho, 10%);
+}
+
+
+/* Top Bar */
+header.navigation{
+	border-bottom: 1px solid $iron;
 }
 
 /* Filters nav */
@@ -52,74 +71,90 @@ header.slideshow p{
 .filters-nav li .hashtag, .filters-nav li .tag, .filters-nav li .categoria{ color: $steel;}
 .filters-nav li { margin: 0px; }
 
-/* Product Simple */
-.product-simple{
+/* Boxes */
+.product-box{
 	margin-bottom: 10px;
 }
-.product-simple .product-info{ padding: 10px 10px; background-color: $white; border: 1px dashed $iron; border-top: 0px}
-.product-simple .product-info h6{ 
+.product-box .product-info{ padding: 10px 10px; background-color: $white; border: 1px dashed $iron; border-top: 0px}
+.product-box .product-info h6{ 
 	margin-bottom: 0; 
 	letter-spacing: -1px;
 	text-transform: uppercase;
 }
-.product-simple .product-novinho{ font-size: rem-calc(11); }
-.product-simple .product-description{ 
+.product-box .product-novinho{ font-size: rem-calc(11); }
+.product-box .product-description{ 
 	font-size: rem-calc(12); 
 	color: $steel;
 	padding: 20px 0 0 0;
 	border-bottom: 1px dashed $iron;
 }
-.product-simple .label{border-right: 1px dashed $iron}
-.product-simple .label.nem-tao-novo{ padding: 6px; color: $redtanovinho; background-color:$white}
-.product-simple .label.um-pouquinho{ padding: 6px; color: $bluetanovinho; background-color:$white}
-.product-simple .label.usadinho{ padding: 6px; color: $orangetanovinho; background-color:$white}
-.product-simple .label.da-caixa{ padding: 6px; color: $greentanovinho; background-color:$white}
+.product-box .label{border-right: 1px dashed $iron}
+.product-box .label.nem-tao-novo{ padding: 6px; color: $redtanovinho; background-color:$white}
+.product-box .label.um-pouquinho{ padding: 6px; color: $bluetanovinho; background-color:$white}
+.product-box .label.usadinho{ padding: 6px; color: $orangetanovinho; background-color:$white}
+.product-box .label.da-caixa{ padding: 6px; color: $greentanovinho; background-color:$white}
 
-.product-simple .product-novinho.nem-tao-novo{ color: $redtanovinho; }
-.product-simple .product-novinho.um-pouquinho{ color: $bluetanovinho; }
-.product-simple .product-novinho.usadinho{ color: $orangetanovinho; }
-.product-simple .product-novinho.da-caixa{ color: $greentanovinho; }
-.product-simple .product-image{
+.product-box .product-novinho.nem-tao-novo{ color: $redtanovinho; }
+.product-box .product-novinho.um-pouquinho{ color: $bluetanovinho; }
+.product-box .product-novinho.usadinho{ color: $orangetanovinho; }
+.product-box .product-novinho.da-caixa{ color: $greentanovinho; }
+.product-box .product-image{
     height: 400px;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 50% 50%;
     position: relative;
 }
-.product-simple .preco{
+.product-box .preco{
 	font-weight: bold;
 	background-color: $pinktanovinho;
 	display: inline-block;
 	color: white;
 	padding: 12px;
 }
-.product-simple .economia{
+.product-box .economia{
 	background-color: $oil;
 	color: white;
 	font-weight: bold;
 	padding: 12px;
 }
-.product-simple .preco .preco-original{
+.product-box .preco .preco-original{
 	font-size: rem-calc(11);
 	font-weight: normal;
 }
-.product-simple .product-image .product-image-tag{
+.product-box .product-image .product-image-tag{
 	position: absolute;
 	bottom: 0;
 	right: 0;
 	color: white;
 }
-.product-simple .product-image .product-image-price{
+.product-box .product-image .product-image-price{
 	position: absolute;
 	bottom: 0;
 	left: 0;
 	color: white;
 }
-.product-simple .product-image .product-image-economia{
+.product-box .product-image .product-image-economia{
 	position: absolute;
 	top: 0;
 	right: 0;
 }
+
+/* Fix para a top-nav com imagem */
+@media only screen and (max-width: 40em) {
+    .title-area {
+
+    }
+    .name {
+
+    }
+    .name img {
+	    height:40px;
+	    margin-top:40px;
+	    margin-left:5px;
+    }
+}
+.name img { margin-left:20px; margin-top: 10px;}
 
 .app-content{
 	padding: 50px 0;

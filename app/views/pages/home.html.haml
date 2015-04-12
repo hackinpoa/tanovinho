@@ -81,7 +81,7 @@
       .box-footer
   %section.large-9.columns.right-side
     .row
-      .product-simple.large-6.columns.left
+      .product-box.large-6.columns.left
         .product-image{ style: "background-image: url(#{asset_path('sample_001.jpg')})"}
           / .product-image-price.usadinho.label # Usadinho, mas parece novo 
           .product-image-price
@@ -99,7 +99,7 @@
             .label.da-caixa # Nem saiu da caixa
         .product-info
           Almofada que comprei na empolgação. Cheguei em casa e vi que não combinava em nada com o meu sofá.
-      .product-simple.large-6.columns.left
+      .product-box.large-6.columns.left
         .product-image{ style: "background-image: url(#{asset_path('sample_003.png')})"}
           / .product-image-price.usadinho.label # Usadinho, mas parece novo 
           .product-image-price
@@ -118,7 +118,7 @@
         .product-info
           Botas que eu comprei para minha viagem de 1 mês ao deserto do Atacama. Nunca mais volto.
     .row
-      .product-simple.large-6.columns.left
+      .product-box.large-6.columns.left
         .product-image{ style: "background-image: url(#{asset_path('sample_004.png')})"}
           / .product-image-price.usadinho.label # Usadinho, mas parece novo 
           .product-image-price
@@ -136,7 +136,7 @@
             .label.usadinho # Usadinho, mas parece novo
         .product-info
           Noiva é uma vez na vida. Ou seja, nunca mais vou usar esse vestido.
-      .product-simple.large-6.columns.left
+      .product-box.large-6.columns.left
         .product-image{ style: "background-image: url(#{asset_path('sample_005.jpg')})"}
           / .product-image-price.usadinho.label # Usadinho, mas parece novo 
           .product-image-price
@@ -155,7 +155,7 @@
         .product-info
           Comprei, mas não jogo. Só sei jogar LOL.
     .row
-      .product-simple.large-6.columns.left
+      .product-box.large-6.columns.left
         .product-image{ style: "background-image: url(#{asset_path('sample_006.jpg')})"}
           / .product-image-price.usadinho.label # Usadinho, mas parece novo 
           .product-image-price
@@ -173,7 +173,7 @@
             .label.da-caixa # Nem saiu da caixa
         .product-info
           Essa camiseta tava linda no modelo do site. Em mim, ficou horrível.
-      .product-simple.large-6.columns.left
+      .product-box.large-6.columns.left
         .product-image{ style: "background-image: url(#{asset_path('sample_002.jpg')})"}
           / .product-image-price.usadinho.label # Usadinho, mas parece novo 
           .product-image-price
@@ -200,7 +200,7 @@
   $(document).ready(function(){
     
     // $('#container').isotope({
-    //   itemSelector: '.product-simple'
+    //   itemSelector: '.product-box'
     // });
     $('.range-slider').foundation('slider', 'set_value', 5000);
     $(".sticky-nav").stick_in_parent()
