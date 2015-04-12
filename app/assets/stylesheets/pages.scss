@@ -8,6 +8,9 @@
             box-sizing: border-box;
 }
 
+/* Button */
+
+
 /* Header */
 header.slideshow{
 	height: 650px;
@@ -42,11 +45,40 @@ ul.breadcrumbs{
 }
 
 /* Produto */
-.product-divisor{
+.product .product-divisor{
 	height: 2px;
 	width: 100%;
 	margin: 20px 0;
-	background-color: lighten($pinktanovinho, 10%);
+	background-color: $iron;
+}
+.product .product-description{
+	font-size: rem-calc(13);
+	color: $steel
+}
+.product .product-preco{
+	padding: 20px 0;
+}
+
+.product .product-owner{
+	padding: 10px 0 20px 0;
+}
+.product .owner-details{
+	font-size: rem-calc(14);
+	color: $oil;
+	list-style-type: none;
+	padding-left: 0;
+	list-style-position: inside;
+	list-style-type: none;
+	list-style-position:inside;
+	margin:0;
+    padding:0;
+
+	li{
+		list-style-type: none;
+        list-style-position:inside;
+        margin:0;
+        padding:0;
+	}
 }
 
 
@@ -71,7 +103,52 @@ header.navigation{
 .filters-nav li .hashtag, .filters-nav li .tag, .filters-nav li .categoria{ color: $steel;}
 .filters-nav li { margin: 0px; }
 
-/* Boxes */
+/* Preço e Economia */
+.preco{
+	font-weight: bold;
+	background-color: $pinktanovinho;
+	display: inline-block;
+	color: white;
+	padding: 12px;
+}
+.preco.inverse{
+	font-weight: bold;
+	color: $pinktanovinho;
+	display: inline-block;
+	background-color: white;
+	padding: 12px;
+}
+.preco.negative{
+	font-weight: bold;
+	color: $oil;
+	display: inline-block;
+	background-color: white;
+	padding: 0;
+	font-size: rem-calc(20);
+}
+.economia{
+	background-color: $oil;
+	color: white;
+	font-weight: bold;
+	padding: 12px;
+}
+.preco .preco-original{
+	font-size: rem-calc(11);
+	font-weight: normal;
+}
+
+/* Labels de Tag */
+.label.nem-tao-novo{ padding: 6px; color: $redtanovinho; background-color:$white}
+.label.um-pouquinho{ padding: 6px; color: $bluetanovinho; background-color:$white}
+.label.usadinho{ padding: 6px; color: $orangetanovinho; background-color:$white}
+.label.da-caixa{ padding: 6px; color: $greentanovinho; background-color:$white}
+.label.inverse.economia{ padding: 6px; background-color: $oil; color:$white}
+.label.inverse.nem-tao-novo{ padding: 6px; background-color: $redtanovinho; color:$white}
+.label.inverse.um-pouquinho{ padding: 6px; background-color: $bluetanovinho; color:$white}
+.label.inverse.usadinho{ padding: 6px; background-color: $orangetanovinho; color:$white}
+.label.inverse.da-caixa{ padding: 6px; background-color: $greentanovinho; color:$white}
+
+/* Boxes da Home */
 .product-box{
 	margin-bottom: 10px;
 }
@@ -89,11 +166,6 @@ header.navigation{
 	border-bottom: 1px dashed $iron;
 }
 .product-box .label{border-right: 1px dashed $iron}
-.product-box .label.nem-tao-novo{ padding: 6px; color: $redtanovinho; background-color:$white}
-.product-box .label.um-pouquinho{ padding: 6px; color: $bluetanovinho; background-color:$white}
-.product-box .label.usadinho{ padding: 6px; color: $orangetanovinho; background-color:$white}
-.product-box .label.da-caixa{ padding: 6px; color: $greentanovinho; background-color:$white}
-
 .product-box .product-novinho.nem-tao-novo{ color: $redtanovinho; }
 .product-box .product-novinho.um-pouquinho{ color: $bluetanovinho; }
 .product-box .product-novinho.usadinho{ color: $orangetanovinho; }
@@ -105,23 +177,7 @@ header.navigation{
     background-position: 50% 50%;
     position: relative;
 }
-.product-box .preco{
-	font-weight: bold;
-	background-color: $pinktanovinho;
-	display: inline-block;
-	color: white;
-	padding: 12px;
-}
-.product-box .economia{
-	background-color: $oil;
-	color: white;
-	font-weight: bold;
-	padding: 12px;
-}
-.product-box .preco .preco-original{
-	font-size: rem-calc(11);
-	font-weight: normal;
-}
+
 .product-box .product-image .product-image-tag{
 	position: absolute;
 	bottom: 0;

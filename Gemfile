@@ -11,6 +11,7 @@ gem 'sass-rails', '~> 5.0'
 
 # css framework
 gem 'foundation-rails'
+gem 'foundation-icons-sass-rails'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -43,6 +44,11 @@ gem 'kaminari'
 gem 'haml-rails'
 
 gem 'thin'
+
+group :assets do 
+
+end
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   # gem 'byebug'

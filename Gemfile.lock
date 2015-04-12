@@ -51,6 +51,9 @@ GEM
     erubis (2.7.0)
     eventmachine (1.0.7)
     execjs (2.5.2)
+    foundation-icons-sass-rails (3.0.0)
+      railties (>= 3.1.1)
+      sass-rails (>= 3.1.1)
     foundation-rails (5.5.1.2)
       railties (>= 3.1.0)
       sass (>= 3.3.0, < 3.5)
@@ -187,6 +190,7 @@ PLATFORMS
 DEPENDENCIES
   devise
   devise-i18n
+  foundation-icons-sass-rails
   foundation-rails
   haml-rails
   jbuilder (~> 2.0)
