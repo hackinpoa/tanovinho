@@ -35,6 +35,7 @@ class PurchasesController < ApplicationController
     purchase.status = params[:StatusTransacao]
     purchase.save
     Rails.logger.info "Compra abandonada: #{purchase.product.name} - #{response.transaction.reference}"
+    render :nothing => true, :status => 200, :content_type => 'text/html'    
   end
 
   # POST /purchases/notification
