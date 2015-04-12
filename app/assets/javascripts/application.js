@@ -30,14 +30,12 @@ $(function(){
 
   $('.range-slider').foundation('slider', 'set_value', 5000);
 
-  $("#sticky-nav").stick_in_parent();
-
   var scrollToContent = function(){
     $('html, body').animate({
       scrollTop: $("#content-wrapper").offset().top
     }, 1000)
   };
-  
+
   var submitProductFilterTimer = null;
   var submitProductFilter = function() {
     if (submitProductFilterTimer) {
@@ -70,4 +68,3 @@ $(function(){
     submitProductFilter().always(scrollToContent);
   });
 });
-

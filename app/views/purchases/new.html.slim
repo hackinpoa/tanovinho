@@ -1,6 +1,6 @@
 == render "layouts/header"
 section.app-content.row
-  .large-10.columns.large-centered
+  .small-10.columns.small-centered
     .box.form.checkout
       .box-header
         h4 
@@ -8,9 +8,9 @@ section.app-content.row
           =" Confirme a sua compra"
       .box-content
         .row
-          .large-3.columns
+          .small-3.columns
             img src="#{attachment_url(@purchase.product, :product_image, :fill, 1024, 768, format: 'jpg')}"
-          .large-9.columns
+          .small-9.columns
             h3 = @purchase.product.name
             .checkout-description
               = @purchase.product.description
