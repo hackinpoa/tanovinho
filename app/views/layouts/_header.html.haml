@@ -14,21 +14,21 @@
           %a{:href => root_path} Ofertas do #TáNovinho
         %li
           %a{:href => new_product_path} Vender no #TáNovinho
-        %li
-          %a{:href => '/purchases?mode=purchases'}
-            %i.fi-shopping-bag
-            Minhas Comprinhas
-        %li
-          %a{:href => '/purchases?mode=sales'}
-            %i.fi-pricetag-multiple
-            Minha Vendinha
         - if user_signed_in?
+          %li
+            %a{:href => '/purchases?mode=purchases'}
+              %i.fi-shopping-bag
+              Minhas Comprinhas
+          %li
+            %a{:href => '/purchases?mode=sales'}
+              %i.fi-pricetag-multiple
+              Minha Vendinha
           %li
             = link_to(destroy_user_session_path, :method => :delete) do
               %i.fi-torso
               Logout
         - else
           %li
-            %a{:href => "#"}
+            %a{:href => "#{new_user_session_path}"}
               %i.fi-torso
               Entrar

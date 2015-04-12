@@ -9,12 +9,25 @@
       .large-12.columns.login
         ul.right
           li
-            = link_to 'Criar produto', new_product_path
+            a href="#{root_path}" Ofertas do #TáNovinho
           li
-            - if user_signed_in?
-              = link_to('Sair', destroy_user_session_path, :method => :delete)
-            - else
-              = link_to('Entrar', new_user_session_path)
+            a href="#{new_product_path}" Vender no #TáNovinho
+          - if user_signed_in?
+            li
+              a href='/purchases?mode=purchases'
+                i.fi-shopping-bag
+                Minhas Comprinhas
+            li
+              a href='/purchases?mode=sales'
+                i.fi-pricetag-multiple
+                Minha Vendinha
+            li
+              = link_to(destroy_user_session_path, :method => :delete) do
+                | Logout
+          - else
+            li
+              a href="#{new_user_session_path}"
+                | Entrar
     .row
       .large-6.large-centered.columns
         .text-center
