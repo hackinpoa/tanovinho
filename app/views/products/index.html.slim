@@ -40,24 +40,10 @@ section.app-content.row
 
 
     // tem row de 2 em 2
-    - @products.each_with_index do |product, index|
+    - @products.in_groups_of(2).each do |product_group|
       .row
-
-        a.product-box.large-6.columns.left href=product_path(id: product.slug)
-          .product-image style="background-image: url(#{attachment_url(product, :product_image, :fill, 1024, 768, format: 'jpg')})"
-            .product-image-price
-              .preco
-                Você paga:
-                span.valor = number_to_currency product.price
-                .preco-original
-                  | Eu paguei:
-                  span R$ 129,90
-            .product-image-economia
-              .economia 33% OFF
-            .product-image-tag
-              .label.da-caixa # Nem saiu da caixa
-          .product-info = product.name
-
+        - product_group.each do |product|
+          = render partial: 'product_details', locals: {product: product} if product.present?
 
       //.product-box.large-6.columns.left
       //  .product-image style="background-image: url(#{asset_path('sample_001.jpg')})"
