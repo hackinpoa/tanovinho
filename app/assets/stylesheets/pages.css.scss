@@ -304,7 +304,7 @@ header.navigation{
 .box.form .form-actions{
 	padding: 20px 0 0 0;
 	border-top: 1px dashed $iron;
-	a{
+	a:not(.button) {
 		font-size: rem-calc(12)
 	}
 }
