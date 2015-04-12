@@ -1,21 +1,23 @@
-h1 New purchase
+== render "layouts/header"
+section.app-content.row
+  .large-10.columns.large-centered
+    .box.form.checkout
+      .box-header
+        h4 
+          i.fi.fi-check.ta-novinho
+          =" Confirme a sua compra"
+      .box-content
+        .row
+          .large-3.columns
+            img src="#{attachment_url(@purchase.product, :product_image, :fill, 1024, 768, format: 'jpg')}"
+          .large-9.columns
+            h3 = @purchase.product.name
+            .checkout-description
+              = @purchase.product.description
+        
+            h5 
+              span Preço: 
+              big.ta-novinho = " #{number_to_currency @purchase.product.price}" 
+      .form-actions.box-footer
+        == render 'form'
 
-p
-  strong Name:
-  = @purchase.product.name
-p
-  strong Description:
-  = @purchase.product.description
-p
-  strong Price:
-  = number_to_currency @purchase.product.price
-p
-  strong Tags:
-  = @purchase.product.tags.map(&:name).join(', ')
-p
-  | vendido por:
-  strong = @purchase.product.user.email
-
-== render 'form'
-
-= link_to 'Back', product_path(@purchase.product.slug)
