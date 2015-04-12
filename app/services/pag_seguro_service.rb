@@ -18,7 +18,8 @@ class PagSeguroService
 
     Rails.logger.info "Enviando requisição para o PagSeguro."
     response = payment.register
-    Rails.logger.info "Requisição enviada com #{response.errors.entries.size} erros"
+    Rails.logger.info "Requisição enviada sem erros" unless response.errors.any?
+    Rails.logger.error "Requisição enviada com erros #{response.errors.join(" | ")}" if response.errors.any?
     response
   end
 
