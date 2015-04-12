@@ -32,7 +32,7 @@ class PurchasesController < ApplicationController
     response = PagSeguroService.notification_info(params[:notificationCode])
 
     purchase = Purchase.find_by token: response[:token]
-    purchase.status = response.status
+    purchase.status = response[:status]
     purchase.save
     Rails.logger.info "Compra abandonada: #{purchase.product.name} - #{response.transaction.reference}"
     render :nothing => true, :status => 200, :content_type => 'text/html'    
@@ -47,7 +47,7 @@ class PurchasesController < ApplicationController
     
     response = PagSeguroService.notification_info(params[:notificationCode])
     purchase = Purchase.find_by token: response[:token]
-    purchase.status = response.status
+    purchase.status = response[:status]
     purchase.save
     Rails.logger.info "Compra efetuada: #{purchase.product.name} - #{purchase.token}"
     render :nothing => true, :status => 200, :content_type => 'text/html'
