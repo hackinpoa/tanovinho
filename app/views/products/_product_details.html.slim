@@ -5,10 +5,10 @@ a.product-box.large-6.columns.left href=product_path(id: product.slug)
         = "Você paga: "
         span.valor = number_to_currency product.price
         .preco-original
-          = "| Eu paguei: "
+          = "Eu paguei: "
           span = number_to_currency product.price_paid
     .product-image-economia
       .economia = "#{number_to_percentage(product.saving, precision: 0)} OFF"
     .product-image-tag
-      .label.da-caixa # Nem saiu da caixa
+      .label.da-caixa = t("condition.condition#{product.condition}")
   .product-info = product.name
