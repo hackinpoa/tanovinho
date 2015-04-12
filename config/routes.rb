@@ -4,7 +4,10 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  resources :purchases, only: [:index, :show]
+  resources :purchases, only: [:index, :show] do
+    post 'abandoned', on: :collection
+    get 'notification', on: :collection
+  end
 
   resources :products do
     resources :purchases, only: [:new, :create]
