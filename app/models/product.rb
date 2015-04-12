@@ -1,6 +1,6 @@
 class Product < ActiveRecord::Base
   include Priceable
-  validates :name, :description, :price, :price_paid, presence: true
+  validates :name, :description, :price, :price_paid, :condition, presence: true
   validate :has_correct_price?
   attachment :product_image
   acts_as_taggable
