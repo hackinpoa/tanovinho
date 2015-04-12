@@ -23,7 +23,7 @@
         .large-10.columns.large-offset-1.search-field
           .row.collapse.postfix-round
             .small-9.columns
-              = f.input_field :search, placeholder: 'Pesquise aqui...', value: params[:product_filter][:search]
+              = f.input_field :search, placeholder: 'Pesquise aqui...', value: (params[:product_filter].present? ? params[:product_filter][:search] : '')
 
             .small-3.columns
               button.button.master.postfix type='submit' Buscar
