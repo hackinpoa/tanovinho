@@ -102,8 +102,9 @@ $column-gutter: rem-calc(20);
 // c. Global
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,800,300);
 // We use these to define default font stacks
-$font-family-sans-serif: "Allerta", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+$font-family-sans-serif: 'Open Sans', sans-serif;
 // $font-family-serif: Georgia, Cambria, "Times New Roman", Times, serif;
 // $font-family-monospace: Consolas, "Liberation Mono", Courier, monospace;
 

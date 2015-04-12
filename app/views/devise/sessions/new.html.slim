@@ -3,7 +3,7 @@ section.app-content.row
   .large-4.columns.large-centered
     .box.form
       .box-header
-        h4 
+        h4
           i.fi.fi-torso.ta-novinho
           =" Oi! Faça seu login abaixo"
       .box-content
@@ -13,13 +13,17 @@ section.app-content.row
             = f.input :password, required: false
             = f.input :remember_me, as: :boolean if devise_mapping.rememberable?
           .form-actions.box-footer
-            = button_tag(type: 'submit', class: "button success") do 
+            = button_tag(type: 'submit', class: "button success") do
               i.fi.fi-check
               =" Entrar"
             br
             = link_to new_user_registration_path do
               = "Não é membro? Registre-se agora."
 
+          .form-actions.box-footer
+            = link_to user_omniauth_authorize_path(:facebook), class: 'button' do
+              i.fi.fi-social-facebook
+              =" Efetuar login com Facebook"
 
 
 
