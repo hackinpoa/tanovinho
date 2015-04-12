@@ -39,10 +39,10 @@ section.app-content.row
         - if @product.user == current_user
           = link_to edit_product_path(@product), class: 'button secondary left' do
             i.fi-pencil
-            = " Alterar meu novinho"
+            = " Alterar meu produto"
         - else
           = link_to new_product_purchase_path(@product.slug), class: 'button success left' do
             i.fi-check
-            = " Comprar o novinho"
+            = " Quero comprar"
 
     - disqus_thread
