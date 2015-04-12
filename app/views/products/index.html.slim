@@ -1,32 +1,65 @@
-h1 Listing products
+section.app-content.row
 
-table
-  thead
-    tr
-      th Name
-      th Slug
-      th Description
-      th Preço
-      th Preço que paguei
-      th Economize
-      th
-      th
-      th
+  section.large-3.columns.left-side#sticky-nav
+    .box
+      .box-header Quão novinho você quer?
+      .box-content
+        ul.side-nav.filters-nav
+          - ['Tanto Faz', 'Nem Saiu da caixa', 'Abri e usei um pouquinho', 'Usadinho, mas parece novo', 'Nem tão novo assim...'].each do |option|
+            li
+              a
+                input type='checkbox'
+                span.hashtag.tanto-faz #
+                span.tag = option
+      .box-footer
+    .box
+      .box-header
+        Que tipo de novinho?
+      .box-content
+        ul.side-nav.filters-nav
+          // TODO: list categories from the database
+          - ['Todos', 'Vestuário', 'Calçados', 'Smartphones', 'Jóias'].each do |option|
+            li
+              a
+                input type="checkbox"
+                span.tag Todos
+    .box
+      .box-header Quão Baratinho?
+      .box-content
+        .range-slider data-options='display_selector: #sliderOutput3; start: 1; end: 5000;' data-slider=''
+          span.range-slider-handle role='slider' tabindex='0'}
+          span.range-slider-active-segment
+        .range-result
+          span Até R$
+          span#sliderOutput3
+          span ,00
+      .box-footer
 
-  tbody
-    - @products.each do |product|
-      tr
-        td = product.name
-        td = product.slug
-        td = product.description
-        td = number_to_currency product.price
-        td = number_to_currency product.price_paid
-        td = number_to_percentage(product.saving, precision: 0)
-        td = link_to 'Show', product_path(id: product.slug)
-        td = link_to 'Edit', edit_product_path(product)
-        td = link_to 'Destroy', product, data: {:confirm => 'Are you sure?'}, :method => :delete
-        td = image_tag attachment_url(product, :product_image, :fill, 300, 300, format: "jpg")
+  section.large-9.columns.right-side
 
-br
 
-= link_to 'New Product', new_product_path
+
+    // tem row de 2 em 2
+    - @products.in_groups_of(2).each do |product_group|
+      .row
+        - product_group.each do |product|
+          = render partial: 'product_details', locals: {product: product} if product.present?
+
+      //.product-box.large-6.columns.left
+      //  .product-image style="background-image: url(#{asset_path('sample_001.jpg')})"
+      //    / .product-image-price.usadinho.label # Usadinho, mas parece novo
+      //    .product-image-price
+      //      .preco
+      //        Você paga:
+      //        span.moeda R$
+      //        span.valor 85,00
+      //        .preco-original
+      //          | Eu paguei:
+      //          span R$ 129,90
+      //    .product-image-economia
+      //      .economia 33% OFF
+      //    .product-image-tag
+      //      .label.da-caixa # Nem saiu da caixa
+      //  .product-info Almofada que comprei na empolgação. Cheguei em casa e vi que não combinava em nada com o meu sofá.
+
+footer
