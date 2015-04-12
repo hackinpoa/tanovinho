@@ -1,10 +1,17 @@
 class Product < ActiveRecord::Base
   include Priceable
-
+  validates :name, :description, :price, :price_paid, presence: true
+  validate :has_correct_price?
   attachment :product_image
   acts_as_taggable
   before_validation :create_slug, if: :name_changed?
   belongs_to :user
+
+  def has_correct_price?
+    if price >= price_paid 
+      errors.add(:price, 'O preço de venda deve ser menor que o preço que você pagou')
+    end    
+  end
 
   def self.condition_options
     (1..5)
@@ -12,6 +19,14 @@ class Product < ActiveRecord::Base
 
   def price=(val)
     super(price_to_number val)
+  end
+
+  def price_paid=(val)
+    super(price_to_number val)
+  end
+
+  def saving
+    ( 1 - ( price / price_paid ) ) * 100
   end
 
   private

@@ -4,4 +4,5 @@ module Priceable
   def price_to_number price
     price.gsub('R$ ', '').gsub('.', '').gsub(',', '.')
   end
+
 end
