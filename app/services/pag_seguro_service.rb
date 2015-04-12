@@ -1,8 +1,24 @@
 class PagSeguroService
+  @@email = ENV["PAGSEGURO_EMAIL"]
+  @@token = ENV["PAGSEGURO_TOKEN"]
+
+  # Busca informaçoes de uma notificação no pagseguro
+  def self.notification_info (code)
+    Rails.logger.info "Iniciando consulta de notificaçoes de transação..."
+    wsUrl = "https://ws.pagseguro.uol.com.br/v3/transactions/notifications/#{code}?token=#{@@token}&email=#{@@email}"
+    response = HTTPParty.get(wsUrl);
+    Rails.logger.info %Q("
+        [reference: #{response.transaction.reference}]
+        [status: #{response.transaction.status}]
+      ")
+    Rails.logger.info "Consulta de notificação de transação realizada."
+    response
+  end
+
 
   def self.create_payment_request (purchase, current_user, urls)
     Rails.logger.info "Iniciando integração com PagSeguro..."
-    payment = PagSeguro::PaymentRequest.new(email: ENV["PAGSEGURO_EMAIL"], token: ENV["PAGSEGURO_TOKEN"])
+    payment = PagSeguro::PaymentRequest.new(email: @@email, token: @@token)
     payment.reference = purchase.token
   
     payment.abandon_url = urls[:abandoned]

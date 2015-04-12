@@ -28,12 +28,14 @@ class PurchasesController < ApplicationController
     Rails.logger.info %Q(
       Requisição recebida de compra abandonada: 
         [token: #{params[:Referencia]}] 
-        [StatusTransacao: #{params[:StatusTransacao]}]"
+        [StatusTransacao: #{params[:StatusTransacao]}]
       )
-    purchase = Purchase.find_by token: params[:Referencia]
+    response = PagSeguroService.notification_info(params[:notificationCode])
+
+    purchase = Purchase.find_by token: response.transaction.reference
     purchase.status = params[:StatusTransacao]
     purchase.save
-    Rails.logger.info "Compra abandonada: #{purchase.product.name} - #{purchase.token}"
+    Rails.logger.info "Compra abandonada: #{purchase.product.name} - #{response.transaction.reference}"
   end
 
   # POST /purchases/notification
@@ -41,7 +43,7 @@ class PurchasesController < ApplicationController
     Rails.logger.info %Q(
       Requisição recebida de compra concluída: 
         [token: #{params[:Referencia]}] 
-        [StatusTransacao: #{params[:StatusTransacao]}]"
+        [StatusTransacao: #{params[:StatusTransacao]}]
       )
     purchase = Purchase.find_by token: params[:Referencia]
     purchase.status = params[:StatusTransacao]
