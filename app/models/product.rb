@@ -27,6 +27,10 @@ class Product < ActiveRecord::Base
       products = products.where('condition in (:conditions)', {conditions: conditions})
     end
 
+    if filter_params['value'].present?
+      products = products.where('price <= :price', {price: filter_params['value'].to_i})
+    end
+
     products
   end
 
