@@ -6,7 +6,7 @@ class Purchase < ActiveRecord::Base
 
   private
     def init
-      self.status = 'created'
+      self.status ||= 'created'
     end
 
     def set_value
