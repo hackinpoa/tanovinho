@@ -1,0 +1,14 @@
+a.product-box.large-6.columns.left href=product_path(id: product.slug)
+  .product-image style="background-image: url(#{attachment_url(product, :product_image, :fill, 1024, 768, format: 'jpg')})"
+    .product-image-price
+      .preco
+        Você paga:
+        span.valor = number_to_currency product.price
+        .preco-original
+          | Eu paguei:
+          span = number_to_currency product.price_paid
+    .product-image-economia
+      .economia = "#{number_to_percentage(product.saving, precision: 0)} OFF"
+    .product-image-tag
+      .label.da-caixa # Nem saiu da caixa
+  .product-info = product.name
