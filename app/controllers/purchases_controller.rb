@@ -8,8 +8,13 @@ class PurchasesController < ApplicationController
 
   # GET /purchases
   # GET /purchases.json
-  def index
-    @purchases = current_user.purchases
+  def index    
+    @is_sales = params[:mode] == 'sales'
+    if @is_sales
+      @items = Product.where(user_id: current_user.id) 
+    else 
+      @items = current_user.purchases
+    end
   end
 
   # GET /purchases/1
