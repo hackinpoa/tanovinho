@@ -1,26 +1,46 @@
-p#notice = notice
+section.app-content.row
+  section.breadcrumb.row
+  .large-12.columns
+    ul.breadcrumbs
+      li
+        a href=root_path > Ver ofertas
+      li.current
+        a href='#' = truncate(@product.name)
+  section.large-7.columns.left-side#sticky-nav
+    img src=attachment_url(@product, :product_image, :fill, 1024, 768, format: 'jpg')
+  section.large-5.columns.right-side
+    .product
+      .product-title
+        h4 = @product.name
+        .label.inverse class="condition#{@product.condition}" = '#' + t("condition.condition#{@product.condition}")
+        .label.economia.inverse = "#{number_to_percentage(@product.saving, precision: 0)} OFF"
+      .product-divisor
+      .product-description = simple_format @product.description
+      .product-preco
+        .preco.left.negative
+          = "Você paga: "
+          span.valor = number_to_currency @product.price
+          .preco-original
+            = "Eu paguei: "
+            span = number_to_currency @product.price_paid
+        .clearfix
+      .product-owner
+        ul.owner-details
+          // li
+          //   i.fi-torso = @product.user.email
+          li
+            i.fi-mail
+            = " #{@product.user.email}"
+          // li
+          //   i.fi-telephone = @product.user.email
 
-= link_to 'Comprar', new_product_purchase_path(@product.slug)
 
-p
-  strong Name:
-  = "#{@product.name}. #{t("condition.condition#{@product.condition}")}"
-p
-  strong Description:
-  = @product.description
-p
-  strong Price:
-  = number_to_currency @product.price
-p
-  strong Price:
-  = number_to_currency @product.price_paid
-p
-  strong Tags:
-  = @product.tags.map(&:name).join(', ')
-p
-  | vendido por:
-  strong = @product.user.email
-
-= link_to 'Edit', edit_product_path(@product)
-'|
-= link_to 'Back', products_path
+      .product-footer
+        - if @product.user == current_user
+          = link_to edit_product_path(@product), class: 'button secondary left' do
+            i.fi-pencil
+            = " Alterar meu novinho"
+        - else
+          = link_to new_product_purchase_path(@product.slug), class: 'button success left' do
+            i.fi-check
+            = " Comprar o novinho"
