@@ -1,0 +1,54 @@
+= render 'header'
+%section.app-content.row
+  %section.large-3.columns.left-side#sticky-nav
+    .box
+      .box-header
+        %i.fi-torso
+        Célio Silva de Mello e Andrade
+      .box-content
+        %ul.side-nav.inner-nav
+          %li
+            %a
+              %i.fi-shopping-bag  
+              Minhas Comprinhas
+          %li.active
+            %a
+              %i.fi-pricetag-multiple  
+              Minha Vendinha
+          %li
+            %a
+              %i.fi-plus  
+              Vender no #TáNovinho
+
+  %section.large-9.columns.right-side
+    .product-listed
+      .row
+        .large-3.columns
+          .product-image{ style: "background-image: url(#{asset_path('sample_001.jpg')})"}
+        .large-9.columns.product-data
+          .product-name
+            %h5 Almofada que comprei na empolgação. Cheguei em casa e vi que não combinava em nada com o meu sofá. 
+          .product-info
+            %ul.product-details
+              %li 
+                %i.fi-clock
+                Comprado em 
+                %span.date 08/05/2014
+              %li 
+                %i.fi-eye
+                Visualizado
+                %span.times 89
+                vezes
+              %li 
+                %i.fi-price-tag
+                R$ 80,00
+          %ul.product-actions 
+            %li
+              %a
+                %i.fi-pencil
+                Editar
+            %li
+              %a.danger
+                %i.fi-x
+                Remover
+

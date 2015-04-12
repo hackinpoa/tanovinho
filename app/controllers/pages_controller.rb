@@ -6,4 +6,12 @@ class PagesController < ApplicationController
 	def produto
 
 	end
+
+	def compras
+
+	end
+
+	def vendas
+
+	end
 end

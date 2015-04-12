@@ -8,6 +8,10 @@
             box-sizing: border-box;
 }
 
+/* Links */
+a.danger{
+	color: $redtanovinho;
+}
 /* Button */
 
 
@@ -36,9 +40,6 @@ header.slideshow .logo{ padding: 40px 0; }
 header.slideshow p{ color: $white;}
 
 /* Breadcrumbs */
-section.breadcrumb{
-
-}
 ul.breadcrumbs{
 	border-left: 0px;
 	border-right: 0px;
@@ -86,6 +87,10 @@ ul.breadcrumbs{
 header.navigation{
 	border-bottom: 1px solid $iron;
 }
+
+/* Inner nav */
+.inner-nav li a { color: $steel !important; &:hover{text-decoration: underline;}}
+.inner-nav li.active a { color: $pinktanovinho !important; &:hover{text-decoration: underline;}}
 
 /* Filters nav */
 .filters-nav li a{
@@ -147,6 +152,63 @@ header.navigation{
 .label.inverse.um-pouquinho{ padding: 6px; background-color: $bluetanovinho; color:$white}
 .label.inverse.usadinho{ padding: 6px; background-color: $orangetanovinho; color:$white}
 .label.inverse.da-caixa{ padding: 6px; background-color: $greentanovinho; color:$white}
+
+
+/* Lista das comprinhas e da vendinha */
+.product-listed{
+	border-bottom: 1px dashed $iron;
+}
+.product-listed .product-info{
+	padding: 20px 0px
+}
+.product-listed .product-image{
+    height: 200px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    position: relative;
+}
+.product-listed .product-details{
+	font-size: rem-calc(12);
+	color: $oil;
+	list-style-type: none;
+	padding-left: 0;
+	list-style-position: inside;
+	list-style-type: none;
+	list-style-position:inside;
+	margin:0;
+    padding:0;
+
+	li{
+		list-style-type: none;
+        list-style-position:inside;
+        margin:0;
+        padding:0;
+	}
+}
+.product-listed .product-data{ position: relative; height: 200px; }
+.product-listed .product-actions { padding: 1px 0; position: absolute; bottom: 0; left: 0; font-size: rem-calc(12) }
+.product-listed ul.product-actions {
+	font-size: rem-calc(12);
+	color: $oil;
+	list-style-type: none;
+	padding-left: 0;
+	list-style-position: inside;
+	list-style-type: none;
+	list-style-position:inside;
+	margin:0;
+    padding:0;
+	li{
+		list-style-type: none;
+        list-style-position:inside;
+        margin:0;
+        padding:0;
+        float: left;
+        a:hover{
+        	text-decoration: underline;
+        }
+	}
+}
 
 /* Boxes da Home */
 .product-box{

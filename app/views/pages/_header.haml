@@ -13,8 +13,19 @@
           %a{:href => "#"} Ofertas do #TáNovinho
         %li
           %a{:href => "#"} Vender no #TáNovinho
+        %li
+          %a{:href => "#"} 
+            %i.fi-shopping-bag 
+            Minhas Comprinhas
+        %li
+          %a{:href => "#"} 
+            %i.fi-pricetag-multiple 
+            Minha Vendinha
         - if user_signed_in? 
-          = link_to('Logout', destroy_user_session_path, :method => :delete)
+          %li
+            = link_to(destroy_user_session_path, :method => :delete) do
+              %i.fi-torso
+              Logout
         - else
           %li
             %a{:href => "#"} 
