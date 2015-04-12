@@ -45,7 +45,7 @@ section.app-content.row
                 = link_to edit_product_path(product), class: 'button secondary left' do
                   i.fi-pencil
                   = " Alterar meu produto"
-                = link_to edit_product_path(product), class: 'button alert left' do
+                = link_to product_path(product), {class: 'button alert left', method: :delete} do
                   i.fi-x
                   = " Remover"
 
