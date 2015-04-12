@@ -8,6 +8,11 @@
             box-sizing: border-box;
 }
 
+/* General Icons */
+i.ta-novinho{
+	color: $pinktanovinho;
+}
+
 /* Header */
 header.slideshow{
 	height: 650px;
@@ -31,7 +36,24 @@ header.slideshow .login a{
 }
 header.slideshow .logo{ padding: 40px 0; }
 header.slideshow p{ color: $white;}
-
+header.slideshow ul{
+	padding-left: 0;
+	list-style-position: inside;
+	list-style-type: none;
+	list-style-position:inside;
+	margin:0;
+    padding:0;
+	li{
+		list-style-type: none;
+        list-style-position:inside;
+        margin-right:30px;
+        padding:0;
+        float: left;
+        a:hover{
+        	text-decoration: underline;
+        }
+	}
+}
 /* Breadcrumbs */
 section.breadcrumb{
 
