@@ -34,26 +34,28 @@
           img src=asset_path('tanovinho_800_white.png') style="display: inline"
       .small-10.small-centered.columns
         p É um site para passar adiante aquilo que você acabou de comprar e, na hora de usar, não foi aquela coooisa. Fácil de entender, né? Agora é só aproveitar essas barbadas e nunca mais deixar algo novinho encalhado!
-        .small-10.columns.small-offset-1.search-field
-          .row.collapse.postfix-round
-            .small-9.columns
-              = f.input_field :search, placeholder: 'Pesquise aqui...', value: (params[:product_filter].present? ? params[:product_filter][:search] : '')
-
-            .small-3.columns
-              button.button.master.postfix type='submit' Buscar
 
   section#content-wrapper.app-content.row
 
     section.small-3.columns.left-side#sticky-nav
       = render partial: 'filters', locals: {f: f}
 
-    section.small-9.columns.right-side.products-container
+    section.small-9.columns.right-side
 
-      - @products.in_groups_of(2).each do |product_group|
-        .row
-          - product_group.each do |product|
-            = render partial: 'product_details', locals: {product: product} if product.present?
+      .small-10.columns.small-offset-1.search-field
+        .row.collapse.postfix-round
+          .small-9.columns
+            = f.input_field :search, placeholder: 'Pesquise aqui...', value: (params[:product_filter].present? ? params[:product_filter][:search] : '')
 
-      = paginate(@products)
+          .small-3.columns
+            button.button.master.postfix type='submit' Buscar
+
+      .products-container
+        - @products.in_groups_of(2).each do |product_group|
+          .row
+            - product_group.each do |product|
+              = render partial: 'product_details', locals: {product: product} if product.present?
+
+        = paginate(@products)
 
   footer
