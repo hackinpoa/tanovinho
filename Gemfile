@@ -41,6 +41,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # authentication gem
 gem 'devise'
 gem 'devise-i18n'
+gem 'omniauth-facebook'
 
 # slim templates
 gem 'slim-rails'

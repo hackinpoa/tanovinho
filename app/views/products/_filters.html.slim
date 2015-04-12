@@ -21,15 +21,16 @@
   //             input type="checkbox"
   //             span.tag Todos
 
-  // TODO: implement this filter
-  // .box
-  //   .box-header Quão Baratinho?
-  //   .box-content
-  //     .range-slider data-options='display_selector: #sliderOutput3; start: 1; end: 5000;' data-slider=''
-  //       span.range-slider-handle role='slider' tabindex='0'}
-  //       span.range-slider-active-segment
-  //     .range-result
-  //       span Até R$
-  //       span#sliderOutput3
-  //       span ,00
-  //   .box-footer
+  .box
+    .box-header Quão Baratinho?
+    .box-content
+      .range-slider.product-value-slider data-options='display_selector: #sliderOutput3; start: 1; end: 5000;' data-slider=''
+        span.range-slider-handle role='slider' tabindex='0'
+        span.range-slider-active-segment
+      .range-result
+        span Até R$
+        span#sliderOutput3
+        span ,00
+      = f.input_field "value", as: :hidden
+
+    .box-footer

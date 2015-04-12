@@ -1,0 +1,27 @@
+== render 'layouts/header'
+
+
+
+section.app-content.row
+  .large-4.columns.large-centered
+    .box.form
+      .box-header
+        h4
+          i.fi.fi-torso.ta-novinho
+          =" Faça seu registro"
+      .box-content
+        = simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+          .form-inputs
+            = f.input :email, required: true, autofocus: true
+            = f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @validatable)
+            = f.input :password_confirmation, required: true
+
+          .form-actions.box-footer
+            = button_tag(type: 'submit', class: 'button success') do
+              i.fi.fi-check
+              =" Registrar"
+
+          .form-actions.box-footer
+            = link_to user_omniauth_authorize_path(:facebook), class: 'button' do
+              i.fi.fi-social-facebook
+              =" Efetuar login com Facebook"
