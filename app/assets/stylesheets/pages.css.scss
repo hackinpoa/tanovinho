@@ -292,6 +292,16 @@ header.navigation{
 	padding: 50px 0;
 }
 
+/* Boxes especificos */
+.box.form .box-header{
+	margin-bottom: 20px;
+}
+
+.box.form .form-actions{
+	padding: 20px 0 0 0;
+	border-top: 1px dashed $iron;
+}
+
 .box .box-header{
 	border-bottom: 1px dashed $iron;
 	padding: 10px 0;

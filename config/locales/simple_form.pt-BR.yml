@@ -13,9 +13,9 @@ pt-BR:
         email: 'E-mail'
         password: 'Senha'
       product:
-        name: 'Nome'
-        description: 'Descrição'
-        price: 'Preço de venda'
-        price_paid: 'Preço que eu paguei'
+        name: 'O que você está vendendo?'
+        description: 'Se está novinho, por que você quer vender?'
+        price: 'O Preço que pelo qual você quer vender'
+        price_paid: 'O Preço que você pagou'
         tag_list: 'Tags'
         condition: 'Quão novo está o produto?'
