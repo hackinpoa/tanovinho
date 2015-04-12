@@ -48,7 +48,7 @@ $(function(){
     }, 600);
   };
 
-  $('form.product_filter .product-value-slider').on('change.fndtn.slider', function(){
+  $('form.product_filter .product-value-slider').on('change.fndtn.slider', function() {
     $('#product_filter_value').val($(this).attr('data-slider'));
 
     submitProductFilter();
