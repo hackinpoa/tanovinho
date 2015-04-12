@@ -1,7 +1,21 @@
-h1 Editing product
+== render 'layouts/header'
+section.app-content.row
+  .large-6.columns.large-centered
+    .box.form
+      .box-header
+        h4 
+          i.fi.fi-plus.ta-novinho
+          =" Altere os dados do seu novinho"
+      .box-content
+		    == render 'form'
 
-== render 'form'
+/ = link_to 'Back', products_path
 
-= link_to 'Show', product_path(id: @product.slug)
-'|
-= link_to 'Back', products_path
+
+/ h1 Editing product
+
+/ == render 'form'
+
+/ = link_to 'Show', product_path(id: @product.slug)
+/ '|
+/ = link_to 'Back', products_path
