@@ -26,8 +26,7 @@ big.ta-novinho{
 
 /* Header */
 header.slideshow{
-	height: 650px;
-	// background: url(asset-path('slideshow.jpg'));
+  margin-bottom: 30px;
 	background-size: cover;
 	background-position: center;
 	background-position: fixed;
@@ -55,7 +54,7 @@ header.slideshow{
 #video-container {
   top:0%;
   left:0%;
-  height:100%;
+  padding-bottom: 56.25%;
   width:100%;
   overflow: hidden;
 }
