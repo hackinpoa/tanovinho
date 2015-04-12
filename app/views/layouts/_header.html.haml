@@ -10,24 +10,24 @@
     %section.top-bar-section
       %ul.right
         %li
-          %a{:href => "#"} Ofertas do #TáNovinho
+          %a{:href => root_path} Ofertas do #TáNovinho
         %li
-          %a{:href => "#"} Vender no #TáNovinho
+          %a{:href => new_product_path} Vender no #TáNovinho
         %li
-          %a{:href => "#"} 
-            %i.fi-shopping-bag 
+          %a{:href => purchases_path}
+            %i.fi-shopping-bag
             Minhas Comprinhas
         %li
-          %a{:href => "#"} 
-            %i.fi-pricetag-multiple 
+          %a{:href => purchases_path}
+            %i.fi-pricetag-multiple
             Minha Vendinha
-        - if user_signed_in? 
+        - if user_signed_in?
           %li
             = link_to(destroy_user_session_path, :method => :delete) do
               %i.fi-torso
               Logout
         - else
           %li
-            %a{:href => "#"} 
+            %a{:href => "#"}
               %i.fi-torso
               Entrar
