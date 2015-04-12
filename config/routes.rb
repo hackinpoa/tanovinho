@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   resources :purchases, only: [:index, :show] do
     post 'abandoned', on: :collection
-    get 'notification', on: :collection
+    post 'notification', on: :collection
   end
 
   resources :products do
