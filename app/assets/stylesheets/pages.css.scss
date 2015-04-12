@@ -13,6 +13,12 @@ i.ta-novinho{
 	color: $pinktanovinho;
 }
 
+/* Classes to com sono */
+
+big.ta-novinho{
+	color: $pinktanovinho;
+}
+
 /* Header */
 header.slideshow{
 	height: 650px;
@@ -365,8 +371,11 @@ header.navigation{
 .box.form .box-header{
 	margin-bottom: 20px;
 }
-
-
+.box.form.checkout .checkout-description{
+	font-size: rem-calc(12);
+	color: $steel;
+	padding: 0px 0 30px 0;
+}
 .box.form .form-actions{
 	padding: 20px 0 0 0;
 	border-top: 1px dashed $iron;
@@ -374,7 +383,6 @@ header.navigation{
 		font-size: rem-calc(12)
 	}
 }
-
 .box .box-header{
 	border-bottom: 1px dashed $iron;
 	padding: 10px 0;
