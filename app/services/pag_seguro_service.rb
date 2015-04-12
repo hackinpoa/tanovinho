@@ -1,9 +1,51 @@
 class PagSeguroService
+  
+  def self.email 
+    ENV["PAGSEGURO_EMAIL"]
+  end
 
-  def self.create_payment_request (purchase, purchase_url, current_user)
+  def self.token
+    ENV["PAGSEGURO_TOKEN"]
+  end
+
+  def self.statuses
+    {
+      "1" => "waiting_approval",
+      "2" => "checking_credit_card",
+      "3" => "paid",
+      "4" => "finished",
+      "5" => "dispute",
+      "6" => "returned",
+      "7" => "canceled"
+    }
+  end
+
+  # Busca informaçoes de uma notificação no pagseguro
+  def self.notification_info (code)
+    Rails.logger.info "Iniciando consulta de notificaçoes de transação..."
+    wsUrl = "https://ws.pagseguro.uol.com.br/v3/transactions/notifications/#{code}?token=#{token}&email=#{email}"
+    response = HTTParty.get(wsUrl); 
+    Rails.logger.info %Q(
+        [reference: #{response["transaction"]["reference"]}]
+        [status: #{response["transaction"]["status"]}]
+      )
+    Rails.logger.info "Consulta de notificação de transação realizada."
+   
+    { 
+      :token => response["transaction"]["reference"],
+      :status => statuses[response["transaction"]["status"].to_s]
+    }
+  end
+
+
+  def self.create_payment_request (purchase, current_user, urls)
     Rails.logger.info "Iniciando integração com PagSeguro..."
-    payment = PagSeguro::PaymentRequest.new(email: ENV["PAGSEGURO_EMAIL"], token: ENV["PAGSEGURO_TOKEN"])
-    payment.reference = purchase.product.id
+    payment = PagSeguro::PaymentRequest.new(email: email, token: token)
+    payment.reference = purchase.token
+  
+    payment.abandon_url = urls[:abandoned]
+    payment.notification_url = urls[:notification]
+    payment.redirect_url = urls[:redirect]
 
     payment.items << {
       id: purchase.product.id,

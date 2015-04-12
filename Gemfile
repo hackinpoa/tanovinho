@@ -64,6 +64,9 @@ gem "pagseguro-oficial", "~> 2.1.1"
 # disqus comments
 gem 'disqus_rails'
 
+# HTTP Client
+gem 'httparty', '~> 0.13.3'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
