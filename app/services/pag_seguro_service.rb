@@ -1,9 +1,13 @@
 class PagSeguroService
 
-  def self.create_payment_request (purchase, purchase_url, current_user)
+  def self.create_payment_request (purchase, current_user, urls)
     Rails.logger.info "Iniciando integração com PagSeguro..."
     payment = PagSeguro::PaymentRequest.new(email: ENV["PAGSEGURO_EMAIL"], token: ENV["PAGSEGURO_TOKEN"])
-    payment.reference = purchase.product.id
+    payment.reference = purchase.token
+  
+    payment.abandon_url = urls[:abandoned]
+    payment.notification_url = urls[:notification]
+    payment.redirect_url = urls[:redirect]
 
     payment.items << {
       id: purchase.product.id,
