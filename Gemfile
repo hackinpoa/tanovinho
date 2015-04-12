@@ -60,6 +60,9 @@ gem 'irbtools', require: 'irbtools/binding'
 # PagSeguro
 gem "pagseguro-oficial", "~> 2.1.1"
 
+# disqus comments
+gem 'disqus_rails'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
@@ -88,5 +91,9 @@ group :development, :test do
 end
 
 gem 'rails_12factor', group: :production
+
+group :assets do
+  gem 'coffee-rails'
+end
 
 ruby '2.2.0'

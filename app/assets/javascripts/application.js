@@ -15,6 +15,7 @@
 //= require foundation
 //= require jquery.price_format.2.0.min
 //= require sticky.kit
+//= require disqus_rails
 //= require_tree .
 
 $(function(){
