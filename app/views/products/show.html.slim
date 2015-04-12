@@ -8,7 +8,7 @@ section.app-content.row
       li.current
         a href='#' = truncate(@product.name)
   section.large-7.columns.left-side
-    img src=attachment_url(@product, :product_image, :fill, 576, 576, format: 'jpg')
+    img src=attachment_url(@product, :product_image, :fill, 1024, 768, format: 'jpg')
   section.large-5.columns.right-side
     .product
       .product-title
@@ -19,7 +19,6 @@ section.app-content.row
       .product-description = simple_format @product.description
       .product-preco
         .preco.left.negative
-          = "Você paga: "
           span.valor = number_to_currency @product.price
           .preco-original
             = "Eu paguei: "
