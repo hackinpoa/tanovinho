@@ -1,8 +1,10 @@
 class PagSeguroService
 
   def self.create_payment_request (purchase, purchase_url, current_user)
+    Rails.logger.info "Iniciando integração com PagSeguro..."
     payment = PagSeguro::PaymentRequest.new(email: ENV["PAGSEGURO_EMAIL"], token: ENV["PAGSEGURO_TOKEN"])
     payment.reference = purchase.product.id
+
     payment.items << {
       id: purchase.product.id,
       description:  purchase.product.name,
@@ -14,7 +16,10 @@ class PagSeguroService
       email: purchase.user.email,
     }
 
-    payment.register
+    Rails.logger.info "Enviando requisição para o PagSeguro."
+    response = payment.register
+    Rails.logger.info "Requisição enviada com #{response.errors.entries.size} erros"
+    response
   end
 
 end
