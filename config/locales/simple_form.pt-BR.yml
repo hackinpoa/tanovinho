@@ -12,6 +12,7 @@ pt-BR:
         name: 'Nome'
         email: 'E-mail'
         password: 'Senha'
+        remember_me: '&nbsp;Lembrar-me'
       product:
         name: 'O que você está vendendo?'
         description: 'Se está novinho, por que você quer vender?'
