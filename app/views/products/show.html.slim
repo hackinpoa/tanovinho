@@ -35,7 +35,6 @@ section.app-content.row
           // li
           //   i.fi-telephone = @product.user.email
 
-
       .product-footer
         - if @product.user == current_user
           = link_to edit_product_path(@product), class: 'button secondary left' do
@@ -45,3 +44,5 @@ section.app-content.row
           = link_to new_product_purchase_path(@product.slug), class: 'button success left' do
             i.fi-check
             = " Comprar o novinho"
+
+    - disqus_thread

@@ -64,6 +64,13 @@ GEM
       coderay (~> 1.1)
       method_source (~> 0.8, >= 0.8.2)
     coderay (1.1.0)
+    coffee-rails (4.1.0)
+      coffee-script (>= 2.2.0)
+      railties (>= 4.0.0, < 5.0)
+    coffee-script (2.4.1)
+      coffee-script-source
+      execjs
+    coffee-script-source (1.9.1)
     columnize (0.9.0)
     daemons (1.2.2)
     debug_inspector (0.0.2)
@@ -78,6 +85,7 @@ GEM
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
     devise-i18n (0.12.0)
+    disqus_rails (0.0.6)
     erubis (2.7.0)
     eventmachine (1.0.7)
     every_day_irb (2.0.0)
@@ -320,8 +328,10 @@ DEPENDENCIES
   awesome_print
   aws-sdk (< 2)
   byebug
+  coffee-rails
   devise
   devise-i18n
+  disqus_rails
   faker
   foundation-icons-sass-rails
   foundation-rails

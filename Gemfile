@@ -67,6 +67,9 @@ gem 'irbtools', require: 'irbtools/binding'
 # PagSeguro
 gem "pagseguro-oficial", "~> 2.1.1"
 
+# disqus comments
+gem 'disqus_rails'
+
 # HTTP Client
 gem 'httparty', '~> 0.13.3'
 
@@ -98,5 +101,9 @@ group :development, :test do
 end
 
 gem 'rails_12factor', group: :production
+
+group :assets do
+  gem 'coffee-rails'
+end
 
 ruby '2.2.0'
