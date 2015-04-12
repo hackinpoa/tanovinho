@@ -13,6 +13,9 @@ p
   strong Price:
   = number_to_currency @product.price
 p
+  strong Price:
+  = number_to_currency @product.price_paid
+p
   strong Tags:
   = @product.tags.map(&:name).join(', ')
 p
