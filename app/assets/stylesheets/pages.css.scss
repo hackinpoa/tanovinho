@@ -42,13 +42,44 @@ ul.breadcrumbs{
 }
 
 /* Produto */
-.product-divisor{
+.product .product-divisor{
 	height: 2px;
 	width: 100%;
 	margin: 20px 0;
-	background-color: lighten($pinktanovinho, 10%);
+	background-color: $iron;
+}
+.product .product-description{
+	font-size: rem-calc(13);
+	color: $steel
+}
+.product .product-preco{
+	padding: 20px 0;
 }
 
+.product .product-owner{
+	padding: 10px 0 20px 0;
+}
+.product .owner-details{
+	font-size: rem-calc(14);
+	color: $oil;
+	list-style-type: none;
+	padding-left: 0;
+	list-style-position: inside;
+	list-style-type: none;
+	list-style-position:inside;
+	margin:0;
+    padding:0;
+
+	li{
+		list-style-type: none;
+        list-style-position:inside;
+        margin:0;
+        padding:0;
+	}
+}
+.product-footer {
+  margin-bottom: 100px;
+}
 
 /* Top Bar */
 header.navigation{
@@ -71,7 +102,111 @@ header.navigation{
 .filters-nav li .hashtag, .filters-nav li .tag, .filters-nav li .categoria{ color: $steel;}
 .filters-nav li { margin: 0px; }
 
-/* Boxes */
+/* Preço e Economia */
+.preco{
+	font-weight: bold;
+	background-color: $pinktanovinho;
+	display: inline-block;
+	color: white;
+	padding: 12px;
+}
+.preco.inverse{
+	font-weight: bold;
+	color: $pinktanovinho;
+	display: inline-block;
+	background-color: white;
+	padding: 12px;
+}
+.preco.negative{
+	font-weight: bold;
+	color: $oil;
+	display: inline-block;
+	background-color: white;
+	padding: 0;
+	font-size: rem-calc(20);
+}
+.economia{
+	background-color: $oil;
+	color: white;
+	font-weight: bold;
+	padding: 12px;
+}
+.preco .preco-original{
+	font-size: rem-calc(11);
+	font-weight: normal;
+}
+
+/* Labels de Tag */
+.label.nem-tao-novo, .label.condition1{ padding: 6px; color: $redtanovinho; background-color:$white}
+.label.um-pouquinho, .label.condition2{ padding: 6px; color: $bluetanovinho; background-color:$white}
+.label.usadinho, .label.condition3{ padding: 6px; color: $orangetanovinho; background-color:$white}
+.label.da-caixa, .label.condition4{ padding: 6px; color: $greentanovinho; background-color:$white}
+
+.label.inverse.nem-tao-novo, .label.inverse.condition1{ padding: 6px; background-color: $redtanovinho; color:$white}
+.label.inverse.um-pouquinho, .label.inverse.condition2{ padding: 6px; background-color: $bluetanovinho; color:$white}
+.label.inverse.usadinho, .label.inverse.condition3{ padding: 6px; background-color: $orangetanovinho; color:$white}
+.label.inverse.da-caixa, .label.inverse.condition4{ padding: 6px; background-color: $greentanovinho; color:$white}
+
+.label.inverse.economia{ padding: 6px; background-color: $oil; color:$white}
+
+
+/* Lista das comprinhas e da vendinha */
+.product-listed{
+	border-bottom: 1px dashed $iron;
+}
+.product-listed .product-info{
+	padding: 20px 0px
+}
+.product-listed .product-image{
+    height: 200px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    position: relative;
+}
+.product-listed .product-details{
+	font-size: rem-calc(12);
+	color: $oil;
+	list-style-type: none;
+	padding-left: 0;
+	list-style-position: inside;
+	list-style-type: none;
+	list-style-position:inside;
+	margin:0;
+    padding:0;
+
+	li{
+		list-style-type: none;
+        list-style-position:inside;
+        margin:0;
+        padding:0;
+	}
+}
+.product-listed .product-data{ position: relative; height: 200px; }
+.product-listed .product-actions { padding: 1px 0; position: absolute; bottom: 0; left: 0; font-size: rem-calc(12) }
+.product-listed ul.product-actions {
+	font-size: rem-calc(12);
+	color: $oil;
+	list-style-type: none;
+	padding-left: 0;
+	list-style-position: inside;
+	list-style-type: none;
+	list-style-position:inside;
+	margin:0;
+    padding:0;
+	li{
+		list-style-type: none;
+        list-style-position:inside;
+        margin:0;
+        padding:0;
+        float: left;
+        a:hover{
+        	text-decoration: underline;
+        }
+	}
+}
+
+/* Boxes da Home */
 .product-box{
 	margin-bottom: 10px;
 }

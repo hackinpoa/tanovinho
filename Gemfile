@@ -18,6 +18,7 @@ gem 'sass-rails', '~> 5.0'
 
 # css framework
 gem 'foundation-rails'
+gem 'foundation-icons-sass-rails'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -47,7 +48,7 @@ gem 'simple_form'
 # pagination
 gem 'kaminari'
 
-# upload 
+# upload
 gem 'mini_magick'
 gem 'refile', require: ["refile/rails", "refile/image_processing"]
 gem "aws-sdk", '< 2'
