@@ -9,6 +9,8 @@ section.app-content.row
         a href='#' = truncate(@product.name)
   section.large-7.columns.left-side
     img src=attachment_url(@product, :product_image, :fill, 1024, 768, format: 'jpg')
+
+    p = render_shareable
   section.large-5.columns.right-side
     .product
       .product-title
