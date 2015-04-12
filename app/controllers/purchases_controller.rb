@@ -2,6 +2,9 @@ class PurchasesController < ApplicationController
   before_action :authenticate_user!, except: [:notification, :abandoned]
   before_action :set_product, only: [:new, :create]
   before_action :set_purchase, only: [:show, :update, :destroy]
+  
+  # Ignorar validação contra ataque CSRF, pois o pagseguro não envia a token
+  skip_before_action :verify_authenticity_token 
 
   # GET /purchases
   # GET /purchases.json
