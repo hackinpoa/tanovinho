@@ -1,11 +1,10 @@
 p#notice = notice
 
+= link_to 'Comprar', new_product_purchase_path(@product.slug)
+
 p
   strong Name:
   = "#{@product.name}. #{t("condition.condition#{@product.condition}")}"
-p
-  strong Slug:
-  = @product.slug
 p
   strong Description:
   = @product.description

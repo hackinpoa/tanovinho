@@ -1,0 +1,21 @@
+h1 New purchase
+
+p
+  strong Name:
+  = @purchase.product.name
+p
+  strong Description:
+  = @purchase.product.description
+p
+  strong Price:
+  = number_to_currency @purchase.product.price
+p
+  strong Tags:
+  = @purchase.product.tags.map(&:name).join(', ')
+p
+  | vendido por:
+  strong = @purchase.product.user.email
+
+== render 'form'
+
+= link_to 'Back', product_path(@purchase.product.slug)

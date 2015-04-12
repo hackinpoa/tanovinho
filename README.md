@@ -3,11 +3,12 @@
 
 E-commerce para compra e venda de produtos novinhos.
 
-## Live Preview
+## Ambientes
 
-[tanovinho.herokuapp.com](https://tanovinho.herokuapp.com/).
+ - [Produção](https://tanovinho.herokuapp.com/).
+ - [Desenvolvimento](https://tanovinho-dev.herokuapp.com/)
 
-Projeto desevolvido durante o [HackInPoa](http://hackinpoa.globo.com/).
+Projeto desenvolvido durante o [HackInPoa](http://hackinpoa.globo.com/).
 
 ## Configuração do ambiente
 **TODO**
