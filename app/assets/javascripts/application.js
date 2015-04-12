@@ -25,4 +25,8 @@ $(function(){
     centsSeparator: ',',
     thousandsSeparator: '.'
   });
+
+  $('.range-slider').foundation('slider', 'set_value', 5000);
+
+  $(".sticky-nav").stick_in_parent();
 });
